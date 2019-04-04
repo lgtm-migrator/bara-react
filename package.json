@@ -1,18 +1,42 @@
 {
   "name": "bara-react",
-  "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "description": "BaraJS for React creative",
+  "homepage": "https://barajs.dev",
+  "repository": "https://github.com/barajs/bara-react",
+  "version": "0.0.0",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
+    "bara": "2.0.0",
+    "react-native-web": "0.11.2"
+  },
+  "devDependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.13.0",
     "@types/react": "16.8.12",
     "@types/react-dom": "16.8.3",
+    "@types/react-native": "0.57.42",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
+    "semantic-release": "15.13.3",
+    "tslint": "5.15.0",
+    "tslint-config-airbnb": "5.11.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-react": "4.0.0",
     "typescript": "3.4.1"
   },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
   "scripts": {
+    "compile": "tsc -b ./tsconfig.lib.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
