@@ -1,6 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { register } from 'bara'
+import App from './App'
+import './index.css'
+import { useReactApp } from './lib'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const BaraApp = () => {
+  useReactApp('bara-app', App)
+}
+
+register(BaraApp)

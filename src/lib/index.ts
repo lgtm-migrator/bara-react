@@ -1,11 +1,14 @@
 import { register, useStream } from 'bara'
-import React, { ComponentType } from 'react'
+import { ComponentType } from 'react'
 
 import { AppRegistry } from 'react-native-web'
 
 // TODO trigger render function when the bara app has been initialized
 const render = (name: string, AppComponent: ComponentType) => {
   AppRegistry.registerComponent(name, () => AppComponent)
+  AppRegistry.runApplication(name, {
+    rootTag: document.getElementById('root'),
+  })
 }
 
 const bridge = (name: string, App: ComponentType) => () => {
@@ -13,5 +16,5 @@ const bridge = (name: string, App: ComponentType) => () => {
 }
 
 export const useReactApp = (name: string, App: ComponentType) => {
-  bridge(name, App)
+  bridge(name, App)()
 }
