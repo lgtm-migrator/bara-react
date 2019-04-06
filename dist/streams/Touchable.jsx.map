@@ -1,1 +1,0 @@
-{"version":3,"file":"Touchable.jsx","sourceRoot":"","sources":["../../src/lib/streams/Touchable.tsx"],"names":[],"mappings":"AAEA,OAAO,EACL,uBAAuB,EACvB,kBAAkB,EAClB,qBAAqB,EACrB,sBAAsB,GACvB,MAAM,qBAAqB,CAAA;AAE5B,MAAM,CAAC,MAAM,mBAAmB,GAAG,GAAG,EAAE;IACtC,OAAO;QACL,UAAU,EAAE;YACV,uBAAuB;YACvB,kBAAkB;YAClB,qBAAqB;YACrB,sBAAsB;SACvB;KACF,CAAA;AACH,CAAC,CAAA"}
