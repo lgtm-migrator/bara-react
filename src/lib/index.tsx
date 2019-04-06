@@ -3,8 +3,6 @@ import React, { ComponentType } from 'react'
 
 import { AppRegistry } from 'react-native-web'
 
-import { BaraProvider } from './context'
-
 const BaraApp = (AppComponent: ComponentType) => () => AppComponent
 
 // TODO trigger render function when the bara app has been initialized

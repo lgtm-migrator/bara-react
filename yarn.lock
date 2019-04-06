@@ -1003,6 +1003,13 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@bara/basics@^2.0.1-alpha.14+f26d209":
+  version "2.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.0.1-alpha.14.tgz#5812d17c4342914e3ebe5f743577352f81b69ddb"
+  integrity sha512-2uSUlblRIkIDNbFcyS8y7uaxhPGRzNsYcqLHKS14x0eDrMEKilA6tjmt+RGTzdJuSGoBs2eMMgJSJWrtenvUnw==
+  dependencies:
+    "@bara/core" "^2.0.0"
+
 "@bara/core@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.0.0.tgz#240f801ca6c8e0760aa986362eb7bb11447682b8"
@@ -2257,11 +2264,12 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/bara/-/bara-2.0.0.tgz#c91f698f13d5c035f5e18032be15a640d0dec860"
-  integrity sha512-Q0YNv5hb61ReLoMdgfmSzVzj+BjBy3zY09ocnw07LtlFOSsiPQaEbQRLHl+bl/M3EOVI/4CxYUxwGC6EMVxlzg==
+bara@^2.0.1-alpha.14:
+  version "2.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/bara/-/bara-2.0.1-alpha.14.tgz#75e9a483259f012804da2f3fccd4c1ea00698691"
+  integrity sha512-3uyPfhkyq1ifBg0RjrD3ClHwHSfUDwCxbGN6tNjY61MSk1xcmV2fvbEP/Ou9v/ZSLbLmSu5V4t/iiuI697jt2A==
   dependencies:
+    "@bara/basics" "^2.0.1-alpha.14+f26d209"
     "@bara/core" "^2.0.0"
 
 base64-js@^1.0.2:
