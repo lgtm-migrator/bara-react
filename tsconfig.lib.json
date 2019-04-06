@@ -21,7 +21,7 @@
     "composite": true,
     "declaration": true,
     "rootDir": "src/lib",
-    "outDir": "./dist",
+    "outDir": "dist",
     "typeRoots": [ "./@types", "./node_modules/@types" ]
   },
   "include": [ "src/lib" ]

@@ -1,0 +1,22 @@
+language: node_js
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
+node_js:
+  - node
+
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+
+script:
+  - yarn build
+  - yarn compile
+
+after_success:
+  - npx semantic-release
