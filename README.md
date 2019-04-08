@@ -1,44 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# bara-react
 
-## Available Scripts
+Build Bara app using React, extensible, scalable, and no breaking build.
 
-In the project directory, you can run:
+This library belong to BaraJS Official Library, we build this for the next universal React app using the architect of reactive functional programming.
 
-### `npm start`
+By using `bara-react`, you're no longer need to maintain a wired codebase anymore. Build your apps feature by feature. You can quickly implement new feature when your business grow up, or remove a feature when it's out dated without touching other area of the project.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```
+yarn add -E bara bara-react
+```
+ or using NPM
 
-### `npm test`
+```
+npm i --save bara bara-react
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In your main `index.js`:
+```javascript
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+import {register} from 'bara'
+import {useReactApp} from 'bara-react'
+import App from './App'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const myBaraReactApp = () => {
+    useReactApp(App)
+}
 
-### `npm run eject`
+register(myBaraReactApp)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In your React App `App.jsx':`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+import React from 'react'
+import {BaraProvider, Text, Touchable, View} from 'bara-react'
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+export default const App = () => {
+    return (
+        <BaraProvider>
+            <View>
+                <Touchable name="welcome-button">
+                    <Text>Hello Bara App!</Text>
+                </Touchable>
+            </View>
+        </BaraProvider>
+    )
+}
+```
+Create another file called `app-trigger.js`:
 
-## Learn More
+```javascript
+import { useTouchablePress, nameOf } from 'bara-react'
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export const displayWelcomeMsg = () => {
+    return useTouchablePress({nameOf: nameOf('welcome-button')}, () => {
+        alert('Welcome Button has been clicked!')
+    })
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+
+MIT   [BaraJS](https://barajs.dev)
+
