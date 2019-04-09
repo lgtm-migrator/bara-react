@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/barajs/bara-react/compare/v1.0.0...v1.1.0) (2019-04-09)
+
+
+### Features
+
+* **exports:** Add Touchable & View components ([#2](https://github.com/barajs/bara-react/issues/2)) ([3fd429a](https://github.com/barajs/bara-react/commit/3fd429a)), closes [#1](https://github.com/barajs/bara-react/issues/1)
+
 # 1.0.0 (2019-04-06)
 
 
