@@ -69,10 +69,15 @@ export const useDisplayWelcomeMsgTrigger = () => {
 
 ## Why I have to build my app this way?
 
-- [ ] React is best of rendering
-- [ ] Bara is best of reactive functional programming
-- [ ] Easily create or remove a component without touching other business components.
-- [ ] Easily plug and play with BaraJS ecosystem module
+- [x] React is best of rendering.
+- [x] Bara is best of reactive functional programming.
+- [x] Easily create or remove a component without touching other business components.
+- [x] Easily plug and play with BaraJS ecosystem module.
+- [ ] It's fun or ... not!
+
+## Contribute
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/barajs/bara)
 
 ## License
 
