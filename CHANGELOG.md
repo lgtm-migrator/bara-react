@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/barajs/bara-react/compare/v1.1.0...v1.2.0) (2019-04-09)
+
+
+### Features
+
+* **exports:** add missing View component ([#3](https://github.com/barajs/bara-react/issues/3)) ([b4a4ecb](https://github.com/barajs/bara-react/commit/b4a4ecb)), closes [#1](https://github.com/barajs/bara-react/issues/1)
+
 # [1.1.0](https://github.com/barajs/bara-react/compare/v1.0.0...v1.1.0) (2019-04-09)
 
 
