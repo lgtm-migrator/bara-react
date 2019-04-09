@@ -1,8 +1,4 @@
 import React, { ReactNode, useContext } from 'react'
-import {
-  BaraTouchableContext,
-  context as touchableContextState,
-} from './exports/Touchable'
 
 import { BaraTouchableContext, touchableContext } from './exports/Touchable'
 import { BaraViewContext, viewContext } from './exports/View'
