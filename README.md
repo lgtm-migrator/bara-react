@@ -1,10 +1,10 @@
 # bara-react
 
-Build Bara app using React, extensible, scalable, and no breaking build.
+Build Bara app using React, easily extensible and scalable without any fear of breaking build.
 
-This library belong to BaraJS Official Library, we build this for the next universal React app using the architect of reactive functional programming.
+This library belongs to BaraJS Official Library, we build this for the next cross-platforms React app using the architect of reactive functional programming.
 
-By using `bara-react`, you're no longer need to maintain a wired codebase anymore. Build your apps feature by feature. You can quickly implement new feature when your business grow up, or remove a feature when it's out dated without touching other area of the project.
+By using `bara-react`, you're no longer need to maintain a wired codebase anymore. Build your apps feature by feature. You can quickly implement new features as your app expands or remove a feature when it's deprecated without touching other area of the project.
 
 ## Installation
 
