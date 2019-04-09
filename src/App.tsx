@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react'
+
 import { StyleSheet, Text } from 'react-native'
 
 import { BaraProvider } from './lib/context'
