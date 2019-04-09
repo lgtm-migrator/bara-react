@@ -77,7 +77,7 @@ export const useDisplayWelcomeMsgTrigger = () => {
 
 ## Contribute
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/barajs/bara)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/barajs/bara-react)
 
 ## License
 
