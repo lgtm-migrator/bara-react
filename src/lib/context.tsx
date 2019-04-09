@@ -1,20 +1,21 @@
 import React, { ReactNode, useContext } from 'react'
-import {
-  BaraTouchableContext,
-  context as touchableContextState,
-} from './exports/Touchable'
 
-interface BaraComponentsState {
+import { BaraTouchableContext, touchableContext } from './exports/Touchable'
+import { BaraViewContext, viewContext } from './exports/View'
+
+export interface BaraComponentsState {
   touchable: BaraTouchableContext
+  view: BaraViewContext
 }
 
-interface BaraState {
+export interface BaraState {
   components: BaraComponentsState
 }
 
 const baraState: BaraState = {
   components: {
-    touchable: touchableContextState,
+    touchable: touchableContext,
+    view: viewContext,
   },
 }
 

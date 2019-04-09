@@ -1,4 +1,3 @@
-import { useCondition } from 'bara'
 import { BaraReactTouchable, TouchableEventFilter } from './event'
 
 export const nameOf = (name: string) => (triggeringEvent: BaraReactTouchable): boolean =>
