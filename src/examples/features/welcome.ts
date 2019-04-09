@@ -7,8 +7,8 @@ export function welcomeTrigger() {
     {
       nameOf: nameOf('welcome-button'),
     },
-    () => {
-      alert('Welcome button is clicked!')
+    ({name}) => {
+      alert(`${name} button is clicked`)
     },
   )
 }

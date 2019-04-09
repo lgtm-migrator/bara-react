@@ -18,12 +18,11 @@ export interface BaraTouchableContext {
 }
 
 // Emitter handle the reference with React Component via Context API
-export const emitter = new EventEmitter()
+const emitter = new EventEmitter()
 
 // Export and being consumed by any Touchable component
-export const context: BaraTouchableContext = {
+export const touchableContext: BaraTouchableContext = {
   onPress: data => {
-    console.log('Emitter:', data)
     emitter.emit(ON_TOUCHABLE_PRESS({ name: '' }), data)
   },
   onPressIn: data => {
@@ -51,7 +50,6 @@ export function useTouchableStream() {
     const onPressListener = emitter.addListener(
       ON_TOUCHABLE_PRESS({ name: '' }),
       (data: BaraReactTouchable) => {
-        console.log(data)
         emit(ON_TOUCHABLE_PRESS, data)
       },
     )

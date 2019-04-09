@@ -1,15 +1,39 @@
 import React, { Component, ReactNode } from 'react'
-import { Text } from 'react-native'
+
+import { StyleSheet, Text } from 'react-native'
 
 import { BaraProvider } from './lib/context'
 import { Touchable } from './lib/exports/Touchable'
+import { View } from './lib/exports/View'
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  button: {
+    margin: 5,
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+  },
+})
 
 const App = () => {
   return (
     <BaraProvider>
-      <Touchable name="welcome-button">
-        <Text>Welcome!</Text>
-      </Touchable>
+      <View style={styles.view}>
+        <View style={styles.button}>
+          <Touchable name="welcome-button">
+            <Text>Welcome!</Text>
+          </Touchable>
+        </View>
+        <View style={styles.button}>
+          <Touchable name="greet-button">
+            <Text>No Greet</Text>
+          </Touchable>
+        </View>
+      </View>
     </BaraProvider>
   )
 }
