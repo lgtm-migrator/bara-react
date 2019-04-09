@@ -1,20 +1,15 @@
 import React, { Component, ReactNode } from 'react'
-import './App.css'
-import logo from './logo.svg'
-
 import { Text } from 'react-native'
 
-import { TouchableOpacity } from './lib/components/touchable'
 import { BaraProvider } from './lib/context'
+import { Touchable } from './lib/exports/Touchable'
 
 const App = () => {
   return (
     <BaraProvider>
-      <div className="App">
-        <TouchableOpacity>
-          <Text>Hello Bara Button</Text>
-        </TouchableOpacity>
-      </div>
+      <Touchable name="welcome-button">
+        <Text>Welcome!</Text>
+      </Touchable>
     </BaraProvider>
   )
 }

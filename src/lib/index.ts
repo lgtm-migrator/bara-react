@@ -15,7 +15,7 @@ const render = (name: string, AppComponent: ComponentType) => {
 
 const bridge = (name: string, App: ComponentType) => () => {
   useInit(() => {
-    render(name, App) // TODO manually call render function here
+    render(name, App)
   })
 }
 
@@ -23,4 +23,4 @@ export const useReactApp = (name: string, App: ComponentType, rootHTML: string =
   bridge(name, App)()
 }
 
-export * from './components'
+export * from './exports'

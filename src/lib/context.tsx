@@ -1,31 +1,34 @@
 import React, { ReactNode, useContext } from 'react'
+import {
+  BaraTouchableContext,
+  context as touchableContextState,
+} from './exports/Touchable'
 
-interface BaraTouchableContext {
-  onPress: (name?: string, className?: string) => void
-}
-
-interface BaraState {
+interface BaraComponentsState {
   touchable: BaraTouchableContext
 }
 
+interface BaraState {
+  components: BaraComponentsState
+}
+
+const baraState: BaraState = {
+  components: {
+    touchable: touchableContextState,
+  },
+}
+
 export const BaraProvider = (props: { children: ReactNode }) => {
-  const ctx: BaraState = {
-    touchable: {
-      onPress: (name, className) => {
-        alert(`Pressed ${name} ${className}!`)
-      },
-    },
-  }
   return (
-    <BaraContext.Provider value={ctx}>{props.children}</BaraContext.Provider>
+    <BaraContext.Provider value={baraState}>
+      {props.children}
+    </BaraContext.Provider>
   )
 }
 
 const dummy = (...args: any[]) => undefined
 
-export const BaraContext = React.createContext<BaraState>({
-  touchable: { onPress: dummy },
-})
+export const BaraContext = React.createContext<BaraState>(baraState)
 
 export const BaraConsumer = BaraContext.Consumer
 
