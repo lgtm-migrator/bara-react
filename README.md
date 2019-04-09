@@ -26,9 +26,11 @@ In your main `index.js`:
 import {register} from 'bara'
 import {useReactApp} from 'bara-react'
 import App from './App'
+import {useDisplayWelcomeMsgTrigger} from './app-trigger'
 
 const myBaraReactApp = () => {
     useReactApp(App)
+    useDisplayWelcomeMsgTrigger()
 }
 
 register(myBaraReactApp)
@@ -58,14 +60,21 @@ Create another file called `app-trigger.js`:
 ```javascript
 import { useTouchablePress, nameOf } from 'bara-react'
 
-export const displayWelcomeMsg = () => {
+export const useDisplayWelcomeMsgTrigger = () => {
     return useTouchablePress({nameOf: nameOf('welcome-button')}, () => {
         alert('Welcome Button has been clicked!')
     })
 }
 ```
 
+## Why I have to build my app this way?
+
+- [ ] React is best of rendering
+- [ ] Bara is best of reactive functional programming
+- [ ] Easily create or remove a component without touching other business components.
+- [ ] Easily plug and play with BaraJS ecosystem module
+
 ## License
 
-MIT   [BaraJS](https://barajs.dev)
+MIT © [BaraJS](https://barajs.dev)
 
