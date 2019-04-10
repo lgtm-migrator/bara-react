@@ -880,17 +880,27 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bara/basics@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.1.0.tgz#b80cf510a7a3d2142df07244cc5b7a0a2058de2d"
-  integrity sha512-j8WvNAdYncc4b4sxDAv14PzMY+XZ6Q1QNL3ckq2y85v0k/E9wOcZ7cUBZWJ/j4Bc3qeWNstJf4xZAt6g/old/g==
+"@bara/barn@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.2.0.tgz#c9a230422e54ea18413deee6a10ca50f378a694c"
+  integrity sha512-I4WdWgZhZB17ppsISM2kRze3iHZklh0JRPT1+v83ob/D2oXpGQO9f2lUEhvcPGBByzB7VU5rqFIrm9XszP0oDg==
   dependencies:
-    "@bara/core" "^2.1.0"
+    "@bara/basics" "^2.2.0"
+    "@bara/core" "^2.2.0"
+    dot-prop "5.0.0"
+    xstream "11.10.0"
 
-"@bara/core@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.1.0.tgz#8f3aecf4be408a5b1ff3b84da79f30c78dc75798"
-  integrity sha512-Ukjo66l6Vnfmwap5QBp1AKUrMIx83xPye9UsfeI8bGsCuOu7aUGCxG2dPyyKcMUk252vW5LYDP09n195R9ktSg==
+"@bara/basics@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.2.0.tgz#a5171f92532703dbbff7e8f70bd8fc3fcde0087a"
+  integrity sha512-1fjbE8cYsdeV/l3HgVzgY2KUr4YhXGmAJzBjDc5Eg1B5Fdd/eNcVsYrruIaRYjGEMQll0xtgFh4IQVjAOnXhGA==
+  dependencies:
+    "@bara/core" "^2.2.0"
+
+"@bara/core@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.2.0.tgz#bb1caa0927800137b51dd38e15b9fa9d44ca073f"
+  integrity sha512-qh3PG1TfIhSjUTLoxcwPh8Uh6DS6kuIdOWZhgg/qAvXzAxWdylXA8BkCyP6L7mDmReKdEGGvRjOGa03FUkVFqg==
   dependencies:
     xstream "11.10.0"
 
@@ -2145,13 +2155,14 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/bara/-/bara-2.1.0.tgz#4058b8845317f15500e0f2d55b7cbf930b62203d"
-  integrity sha512-ILvzAx/UEG65Q0+mImQXLi4MoLxxIncHImMsn6DJPOoKuo/LaYdUg+BfiGLbWJqFMazLxV0CQrOPaM9k4SSSfw==
+bara@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/bara/-/bara-2.2.0.tgz#dd4e57cdfcac915edea25de882827c5294a9c026"
+  integrity sha512-hbYuedzXGp03xpRfxdBg7sHHpBJaFisB0zuW6UKflqigRIoo1Yjj0IJo/F048WlWyWyMUPbmJh6HvrHkPlYd5Q==
   dependencies:
-    "@bara/basics" "^2.1.0"
-    "@bara/core" "^2.1.0"
+    "@bara/barn" "^2.2.0"
+    "@bara/basics" "^2.2.0"
+    "@bara/core" "^2.2.0"
 
 base64-js@^1.0.2:
   version "1.3.0"
@@ -3929,6 +3940,13 @@ domutils@^1.5.1, domutils@^1.7.0:
   dependencies:
     dom-serializer "0"
     domelementtype "1"
+
+dot-prop@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.0.0.tgz#64b7968af349c3a9f966aa12658dbd5829f6b953"
+  integrity sha512-RTmaF2jx3nOBO2GvtFqjnDLycjFUMqt+2pwRx7JVYa81lDauoj9aNkyrJI2ikR58FbBIchiIlRiGG+muLJ4oHQ==
+  dependencies:
+    is-obj "^1.0.0"
 
 dot-prop@^3.0.0:
   version "3.0.0"
