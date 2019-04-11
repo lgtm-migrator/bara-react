@@ -23,16 +23,16 @@ const emitter = new EventEmitter()
 // Export and being consumed by any Touchable component
 export const touchableContext: BaraTouchableContext = {
   onPress: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS({ name: '' }), data)
+    emitter.emit(ON_TOUCHABLE_PRESS(), data)
   },
   onPressIn: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS_IN({ name: '' }), data)
+    emitter.emit(ON_TOUCHABLE_PRESS_IN(), data)
   },
   onPressOut: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS_OUT({ name: '' }), data)
+    emitter.emit(ON_TOUCHABLE_PRESS_OUT(), data)
   },
   onLongPress: data => {
-    emitter.emit(ON_TOUCHABLE_LONG_PRESS({ name: '' }), data)
+    emitter.emit(ON_TOUCHABLE_LONG_PRESS(), data)
   },
 }
 
@@ -48,28 +48,28 @@ export function useTouchableStream() {
     ])
 
     const onPressListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS({ name: '' }),
+      ON_TOUCHABLE_PRESS(),
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS, data)
       },
     )
 
     const onPressInListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS_IN({ name: '' }),
+      ON_TOUCHABLE_PRESS_IN(),
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS_IN, data)
       },
     )
 
     const onPressOutListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS_OUT({ name: '' }),
+      ON_TOUCHABLE_PRESS_OUT(),
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS_OUT, data)
       },
     )
 
     const onLongPressListener = emitter.addListener(
-      ON_TOUCHABLE_LONG_PRESS({ name: '' }),
+      ON_TOUCHABLE_LONG_PRESS(),
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_LONG_PRESS, data)
       },
