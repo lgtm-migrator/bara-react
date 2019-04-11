@@ -1,10 +1,11 @@
 import React, { Component, ReactNode } from 'react'
 
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import { BaraProvider } from './lib/context'
 import { Touchable } from './lib/exports/Touchable'
 import { View } from './lib/exports/View'
+import { Text } from './lib/exports/Text'
 
 const styles = StyleSheet.create({
   view: {

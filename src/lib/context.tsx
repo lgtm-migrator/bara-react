@@ -2,10 +2,12 @@ import React, { ReactNode, useContext } from 'react'
 
 import { BaraTouchableContext, touchableContext } from './exports/Touchable'
 import { BaraViewContext, viewContext } from './exports/View'
+import { BaraTextContext, textContext } from './exports/Text'
 
 export interface BaraComponentsState {
   touchable: BaraTouchableContext
   view: BaraViewContext
+  text: BaraTextContext
 }
 
 export interface BaraState {
@@ -16,6 +18,7 @@ const baraState: BaraState = {
   components: {
     touchable: touchableContext,
     view: viewContext,
+    text: textContext
   },
 }
 

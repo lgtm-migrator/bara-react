@@ -21,7 +21,7 @@ export const View = React.forwardRef(
       }
     }
 
-    return <ViewOriginal {...props} />
+    return <ViewOriginal {...props} onLayout={onLayout} ref={ref} />
   },
 )
 

@@ -11,4 +11,8 @@ export function welcomeTrigger() {
       alert(`${name} button is clicked`)
     },
   )
+
+  useTouchablePress({}, (data) => {
+    console.log('Touchable is press:', data)
+  })
 }
