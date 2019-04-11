@@ -1,10 +1,18 @@
 import { useInit, useBarn, useTimerElapsed } from 'bara'
 
-import { nameOfTouchable, useTouchablePress, useTextPress, nameOfText } from '../../lib'
+import {
+  nameOfTouchable,
+  useTouchablePress,
+  useTextPress,
+  nameOfText,
+} from '../../lib'
 
 export function welcomeTrigger(setState: (key: string, value: any) => void) {
   useInit(() => {
     setState('welcome', `Loading...`)
+    useBarn('welcome', newMessage => {
+      console.log('hey Barn, you are now initiated!')
+    })
   })
 
   useTouchablePress(
