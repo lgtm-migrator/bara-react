@@ -4,6 +4,7 @@ import './index.css'
 import {
   useReactApp,
   useTouchableStream,
+  useTouchableOpacityStream,
   useTextStream,
   mapBarnWithReact,
   useViewStream,
@@ -20,6 +21,7 @@ const BaraApp = () => {
   mapBarnWithReact(setState)
   useViewStream()
   useTouchableStream()
+  useTouchableOpacityStream()
   useTextStream()
   welcomeTrigger(setState)
 }
