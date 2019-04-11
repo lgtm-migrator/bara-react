@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-	"target": "esnext",
+	"target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
@@ -12,13 +12,12 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "noEmit": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "composite": true,
     "declaration": true,
     "rootDir": "src/lib",
     "outDir": "dist",

@@ -4,7 +4,7 @@
   "description": "BaraJS for React creative",
   "homepage": "https://barajs.dev",
   "repository": "https://github.com/barajs/bara-react",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,10 +12,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/lib"
   ],
   "dependencies": {
-    "bara": "2.1.0",
+    "bara": "2.2.0",
     "fbemitter": "2.1.1",
     "react-native-web": "0.11.2"
   },
@@ -30,7 +31,7 @@
     "@types/react-native": "0.57.42",
     "@typescript-eslint/typescript-estree": "1.6.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "16.8.6",
     "react-scripts": "2.1.8",
     "semantic-release": "15.13.3",
     "tslint": "5.15.0",
@@ -44,7 +45,8 @@
     "react-dom": ">=16.8"
   },
   "scripts": {
-    "compile": "tsc -b ./tsconfig.lib.json",
+    "compile": "rm -rf dist && yarn compile:tsc",
+    "compile:tsc": "tsc -b ./tsconfig.lib.json",
     "compile:watch": "tsc -b ./tsconfig.lib.json -w",
     "start": "react-scripts start",
     "build": "react-scripts build",
