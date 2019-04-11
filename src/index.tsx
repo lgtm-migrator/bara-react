@@ -6,6 +6,7 @@ import {
   useTouchableStream,
   useTextStream,
   mapBarnWithReact,
+  useViewStream,
 } from './lib'
 
 import { welcomeTrigger } from './examples/features/welcome'
@@ -17,6 +18,7 @@ const BaraApp = () => {
   })
   useReactApp('bara-app', App)
   mapBarnWithReact(setState)
+  useViewStream()
   useTouchableStream()
   useTextStream()
   welcomeTrigger(setState)
