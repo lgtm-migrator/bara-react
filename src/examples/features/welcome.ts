@@ -1,6 +1,6 @@
 import { useInit, useBarn, useTimerElapsed } from 'bara'
 
-import { nameOf, useTouchablePress, useTextPress, textName } from '../../lib'
+import { nameOfTouchable, useTouchablePress, useTextPress, nameOfText } from '../../lib'
 
 export function welcomeTrigger(setState: (key: string, value: any) => void) {
   useInit(() => {
@@ -9,7 +9,7 @@ export function welcomeTrigger(setState: (key: string, value: any) => void) {
 
   useTouchablePress(
     {
-      nameOf: nameOf('welcome-button'),
+      nameOf: nameOfTouchable('welcome-button'),
     },
     ({ name }) => {
       setState('welcome', `You (${name}) are already welcomed!`)
@@ -18,7 +18,7 @@ export function welcomeTrigger(setState: (key: string, value: any) => void) {
 
   useTextPress(
     {
-      nameOf: textName('no-greet'),
+      nameOf: nameOfText('no-greet'),
     },
     ({ name }) => {
       setState('welcome', `You (${name}) are already welcomed!`)
