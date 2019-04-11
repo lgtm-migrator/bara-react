@@ -1,6 +1,4 @@
 import { useAction, useCondition, useEvent, useTrigger } from 'bara'
-
-import { classOf, nameOf } from './condition'
 import {
   BaraReactTouchable,
   TouchableEventFilter,
