@@ -12,16 +12,16 @@ export interface TextProps extends TextPropsOriginal, BaraBaseComponentProps {
 }
 
 export const Text = React.forwardRef(
-  ({ onLayout: _onLayout, ...props }: TextProps, ref: any) => {
+  ({ onPress: _onPress, ...props }: TextProps, ref: any) => {
     const context = useBaraContext()
-    const onLayout: typeof _onLayout = e => {
-      context.components.text.onLayout({ name, ...props })
-      if (_onLayout) {
-        _onLayout(e)
+    const onPress: typeof _onPress = e => {
+      context.components.text.onPress({ name, ...props })
+      if (_onPress) {
+        _onPress(e)
       }
     }
 
-    return <TextOriginal {...props} onLayout={onLayout} ref={ref} />
+    return <TextOriginal {...props} onPress={onPress} ref={ref} />
   },
 )
 
