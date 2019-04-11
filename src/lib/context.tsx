@@ -1,4 +1,7 @@
+import { BarnState } from 'bara'
 import React, { ReactNode, useContext } from 'react'
+
+import { BarnContext, barnContext } from './functions/barn-bridge'
 
 import { BaraTouchableContext, touchableContext } from './exports/Touchable'
 import { BaraViewContext, viewContext } from './exports/View'
@@ -12,14 +15,16 @@ export interface BaraComponentsState {
 
 export interface BaraState {
   components: BaraComponentsState
+  barn: BarnContext
 }
 
 const baraState: BaraState = {
   components: {
     touchable: touchableContext,
     view: viewContext,
-    text: textContext
+    text: textContext,
   },
+  barn: barnContext,
 }
 
 export const BaraProvider = (props: { children: ReactNode }) => {
