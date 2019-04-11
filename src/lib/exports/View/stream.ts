@@ -1,5 +1,5 @@
 import { useStream } from 'bara'
-import { EventEmitter, EventSubscription } from 'fbemitter'
+import { EventEmitter } from 'fbemitter'
 
 import { BaraReactView, ON_VIEW_LAYOUT } from './event'
 

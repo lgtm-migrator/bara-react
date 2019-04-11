@@ -9,4 +9,13 @@ export interface BaraReactView {
 
 export const ON_VIEW_LAYOUT = createEventType('ON_VIEW_LAYOUT')
 
+export type ViewEventSource = (
+  triggeringEvent: BaraReactView,
+) => boolean | Promise<boolean>
+
+export interface ViewEventFilter {
+  nameOf?: ViewEventSource
+  classOf?: ViewEventSource
+}
+
 export const useViewLayoutEvent = () => useEvent(ON_VIEW_LAYOUT)
