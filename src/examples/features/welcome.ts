@@ -1,18 +1,23 @@
 import { useTrigger } from 'bara'
 
-import { nameOf, useTouchablePress } from '../../lib'
+import { nameOf, useTouchablePress, useTextPress, textName } from '../../lib'
 
 export function welcomeTrigger() {
   useTouchablePress(
     {
       nameOf: nameOf('welcome-button'),
     },
-    ({name}) => {
+    ({ name }) => {
       alert(`${name} button is clicked`)
     },
   )
 
-  useTouchablePress({}, (data) => {
-    console.log('Touchable is press:', data)
-  })
+  useTextPress(
+    {
+      nameOf: textName('no-greet'),
+    },
+    ({ name }) => {
+      alert(`${name} text is PRESSED! YAY !!!`)
+    },
+  )
 }
