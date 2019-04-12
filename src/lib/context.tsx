@@ -1,22 +1,36 @@
+import { BarnState } from 'bara'
 import React, { ReactNode, useContext } from 'react'
 
+import { BarnContext, barnContext } from './functions/barn-bridge'
+
 import { BaraTouchableContext, touchableContext } from './exports/Touchable'
+import {
+  BaraTouchableOpacityContext,
+  touchableOpacityContext,
+} from './exports/TouchableOpacity'
 import { BaraViewContext, viewContext } from './exports/View'
+import { BaraTextContext, textContext } from './exports/Text'
 
 export interface BaraComponentsState {
   touchable: BaraTouchableContext
+  touchableOpacity: BaraTouchableOpacityContext
   view: BaraViewContext
+  text: BaraTextContext
 }
 
 export interface BaraState {
   components: BaraComponentsState
+  barn: BarnContext
 }
 
 const baraState: BaraState = {
   components: {
     touchable: touchableContext,
+    touchableOpacity: touchableOpacityContext,
     view: viewContext,
+    text: textContext,
   },
+  barn: barnContext,
 }
 
 export const BaraProvider = (props: { children: ReactNode }) => {

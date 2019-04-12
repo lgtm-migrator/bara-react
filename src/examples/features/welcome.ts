@@ -1,14 +1,45 @@
-import { useTrigger } from 'bara'
+import { useInit, useBarn, useTimerElapsed } from 'bara'
 
-import { nameOf, useTouchablePress } from '../../lib'
+import {
+  nameOfTouchable,
+  nameOfTouchableOpacity,
+  useTouchablePress,
+  useTouchableOpacityPress,
+  useTextPress,
+  nameOfText,
+} from '../../lib'
 
-export function welcomeTrigger() {
+export function welcomeTrigger(setState: (key: string, value: any) => void) {
+  useInit(() => {
+    setState('welcome', `Loading...`)
+    useBarn('welcome', newMessage => {
+    })
+  })
+
   useTouchablePress(
     {
-      nameOf: nameOf('welcome-button'),
+      nameOf: nameOfTouchable('welcome-button'),
     },
-    ({name}) => {
-      alert(`${name} button is clicked`)
+    ({ name }) => {
+      setState('welcome', `You (${name}) are already welcomed!`)
     },
   )
+
+  useTouchableOpacityPress(
+    {
+      nameOf: nameOfTouchableOpacity('greet-button'),
+    },
+    ({ name }) => {
+      alert(`${name} is PRESSED! YAY !!!`)
+      console.log('hey, are you working?')
+    },
+  )
+
+  useTimerElapsed(5, () => {
+    setState('welcome', `Who are you?`)
+  })
+
+  useBarn('welcome', newMessage => {
+    console.log(`Barn welcome changed to: ${newMessage}`)
+  })
 }

@@ -1,20 +1,20 @@
 import { useAction, useCondition, useEvent, useTrigger } from 'bara'
 import {
-  BaraReactTouchable,
-  TouchableEventFilter,
-  useTouchablePressEvent,
+  BaraReactText,
+  TextPressEventFilter,
+  useTextPressEvent,
 } from './event'
 
-export type TouchablePressCallback = (touchableData: BaraReactTouchable) => void
+export type TextPressCallback = (textData: BaraReactText) => void
 
-export const useTouchablePressTrigger = (
-  eventFilter: TouchableEventFilter,
-  callback: TouchablePressCallback,
+export const useTextPressTrigger = (
+  eventFilter: TextPressEventFilter,
+  callback: TextPressCallback,
 ) => {
-  return useTrigger<BaraReactTouchable>(() => {
-    const event = useTouchablePressEvent()
-    const condition = useCondition<BaraReactTouchable>(
-      (triggeringEvent: BaraReactTouchable | undefined) => {
+  return useTrigger<BaraReactText>(() => {
+    const event = useTextPressEvent()
+    const condition = useCondition<BaraReactText>(
+      (triggeringEvent: BaraReactText | undefined) => {
         let flag = true
         flag =
           flag &&
