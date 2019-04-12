@@ -26,3 +26,4 @@ export const useReactApp = (name: string, App: ComponentType, rootHTML: string =
 export * from './exports'
 export * from './functions'
 export * from './models'
+export * from './context'
