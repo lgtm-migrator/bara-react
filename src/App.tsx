@@ -7,6 +7,7 @@ import { BaraProvider } from './lib/context'
 import { Touchable } from './lib/exports/Touchable'
 import { View } from './lib/exports/View'
 import { Text } from './lib/exports/Text'
+import { TouchableOpacity } from './lib/exports/TouchableOpacity'
 import { WelcomeText } from './examples/components/WelcomeText'
 
 const styles = StyleSheet.create({
@@ -41,9 +42,9 @@ const App = () => {
           </Touchable>
         </View>
         <View style={styles.button}>
-          {/* <Touchable name="greet-button"> */}
-          <Text name="no-greet">No Greet</Text>
-          {/* </Touchable> */}
+          <TouchableOpacity name="greet-button">
+            <Text>No Greet</Text>
+          </TouchableOpacity>
         </View>
         <View>
           <WelcomeText />
