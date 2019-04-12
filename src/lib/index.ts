@@ -1,7 +1,7 @@
 import { register, useInit, useStream } from 'bara'
 import React, { ComponentType } from 'react'
 
-import { AppRegistry } from 'react-native-web'
+import { AppRegistry } from 'react-native'
 
 const BaraApp = (AppComponent: ComponentType) => () => AppComponent
 
