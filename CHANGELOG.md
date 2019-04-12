@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/barajs/bara-react/compare/v1.3.0...v1.3.1) (2019-04-12)
+
+
+### Bug Fixes
+
+* **bara-react:** switch to react-native for AppRegistry import ([56144fb](https://github.com/barajs/bara-react/commit/56144fb))
+
 # [1.3.0](https://github.com/barajs/bara-react/compare/v1.2.0...v1.3.0) (2019-04-12)
 
 
