@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/barajs/bara-react/compare/v1.3.1...v1.3.2) (2019-04-14)
+
+
+### Bug Fixes
+
+* **bara-react:** export BaraProvider for React app ([fa0b5c3](https://github.com/barajs/bara-react/commit/fa0b5c3))
+
 ## [1.3.1](https://github.com/barajs/bara-react/compare/v1.3.0...v1.3.1) (2019-04-12)
 
 
