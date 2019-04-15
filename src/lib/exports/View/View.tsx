@@ -12,7 +12,7 @@ export interface ViewProps extends ViewPropsOriginal, BaraBaseComponentProps {
 }
 
 export const View = React.forwardRef(
-  ({ onLayout: _onLayout, ...props }: ViewProps, ref: any) => {
+  ({ onLayout: _onLayout, name, ...props }: ViewProps, ref: any) => {
     const context = useBaraContext()
     const onLayout: typeof _onLayout = e => {
       context.components.view.onLayout({ name, ...props })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useBarnState, Text, Touchable, View } from '../../lib'
+import { Text, Touchable, useBarnState, View } from '../../lib'
 
 export const WelcomeText = () => {
   const [message, setMessage] = useBarnState('welcome', 'Welcome to Bara App!')
@@ -9,7 +9,7 @@ export const WelcomeText = () => {
   }
 
   return (
-    <View>
+    <View name="message-view">
       <Touchable name="change-welcome-message" onPress={changeMessage}>
         <Text>{message}</Text>
       </Touchable>
