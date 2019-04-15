@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/barajs/bara-react/compare/v1.3.2...v2.0.0) (2019-04-15)
+
+
+### Bug Fixes
+
+* **View:** add name prop to View for Bara ([097d0c1](https://github.com/barajs/bara-react/commit/097d0c1))
+
+
+### Features
+
+* **useReactApp:** make hook accept params as object instead of primitive value ([ecca7e5](https://github.com/barajs/bara-react/commit/ecca7e5))
+
+
+### BREAKING CHANGES
+
+* **useReactApp:** **useReactApp** change params to object
+
 ## [1.3.2](https://github.com/barajs/bara-react/compare/v1.3.1...v1.3.2) (2019-04-14)
 
 
