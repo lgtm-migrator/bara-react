@@ -2,11 +2,11 @@ import { register, useBarnStream } from 'bara'
 import App from './App'
 import './index.css'
 import {
-  useReactApp,
-  useTouchableStream,
-  useTouchableOpacityStream,
-  useTextStream,
   mapBarnWithReact,
+  useReactApp,
+  useTextStream,
+  useTouchableOpacityStream,
+  useTouchableStream,
   useViewStream,
 } from './lib'
 
@@ -17,7 +17,7 @@ const BaraApp = () => {
     version: '1.0.0',
     welcome: 'Welcome to Bara React App!',
   })
-  useReactApp('bara-app', App)
+  useReactApp({ name: 'bara-app', App })
   mapBarnWithReact(setState)
   useViewStream()
   useTouchableStream()
@@ -26,5 +26,10 @@ const BaraApp = () => {
   welcomeTrigger(setState)
 }
 
-const data = register(BaraApp)
-console.log(data)
+const bara = register(BaraApp)
+
+if (process.env.NODE_ENV === 'development' || __DEV__) {
+  if (window) {
+    (window as any).__BARA__ = bara
+  }
+}

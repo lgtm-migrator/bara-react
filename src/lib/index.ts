@@ -5,22 +5,27 @@ import { AppRegistry } from 'react-native'
 
 const BaraApp = (AppComponent: ComponentType) => () => AppComponent
 
-// TODO trigger render function when the bara app has been initialized
-const render = (name: string, AppComponent: ComponentType) => {
-  AppRegistry.registerComponent(name, BaraApp(AppComponent))
-  AppRegistry.runApplication(name, {
-    rootTag: document.getElementById('root'),
-  })
+export interface UseReactAppConfig {
+  name: string
+  App: ComponentType
+  isNative?: boolean
+  rootHTML?: string
 }
 
-const bridge = (name: string, App: ComponentType) => () => {
+export const useReactApp = ({
+  name,
+  App,
+  isNative = false,
+  rootHTML = 'root',
+}: UseReactAppConfig) => {
   useInit(() => {
-    render(name, App)
+    AppRegistry.registerComponent(name, BaraApp(App))
+    if (!isNative) {
+      AppRegistry.runApplication(name, {
+        rootTag: document.getElementById(rootHTML),
+      })
+    }
   })
-}
-
-export const useReactApp = (name: string, App: ComponentType, rootHTML: string = 'root') => {
-  bridge(name, App)()
 }
 
 export * from './exports'
