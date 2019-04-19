@@ -25,7 +25,7 @@
     "@semantic-release/git": "7.0.8",
     "@types/fbemitter": "2.0.32",
     "@types/jest": "24.0.11",
-    "@types/node": "11.13.0",
+    "@types/node": "11.13.5",
     "@types/react": "16.8.12",
     "@types/react-dom": "16.8.3",
     "@types/react-native": "0.57.42",
