@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/barajs/bara-react/compare/v2.0.0...v2.0.1) (2019-04-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bara to v2.3.1 ([5baeeb0](https://github.com/barajs/bara-react/commit/5baeeb0))
+* **license:** replace `fbemitter` with built-in bara's `useEmitter` ([a42e548](https://github.com/barajs/bara-react/commit/a42e548))
+
 # [2.0.0](https://github.com/barajs/bara-react/compare/v1.3.2...v2.0.0) (2019-04-15)
 
 
