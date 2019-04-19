@@ -1,5 +1,4 @@
-import { useStream } from 'bara'
-import { EventEmitter } from 'fbemitter'
+import { createEmitter, useEmitter, useStream } from 'bara'
 
 import {
   BaraReactTouchableOpacity,
@@ -16,27 +15,17 @@ export interface BaraTouchableOpacityContext {
   onLongPress: (data: BaraReactTouchableOpacity) => void
 }
 
-// Emitter handle the reference with React Component via Context API
-const emitter = new EventEmitter()
-
-// Export and being consumed by any Touchable component
-export const touchableOpacityContext: BaraTouchableOpacityContext = {
-  onPress: data => {
-    emitter.emit(ON_TOUCHABLE_OPACITY_PRESS(), data)
-  },
-  onPressIn: data => {
-    emitter.emit(ON_TOUCHABLE_OPACITY_PRESS_IN(), data)
-  },
-  onPressOut: data => {
-    emitter.emit(ON_TOUCHABLE_OPACITY_PRESS_OUT(), data)
-  },
-  onLongPress: data => {
-    emitter.emit(ON_TOUCHABLE_OPACITY_LONG_PRESS(), data)
-  },
-}
-
 // BaraJS Stream Register
 export function useTouchableOpacityStream() {
+  const emitter = createEmitter(({ setName, addEventType }) => {
+    setName('dev.barajs.react.touchable-opacity.emitter')
+
+    addEventType(ON_TOUCHABLE_OPACITY_LONG_PRESS)
+    addEventType(ON_TOUCHABLE_OPACITY_PRESS)
+    addEventType(ON_TOUCHABLE_OPACITY_PRESS_IN)
+    addEventType(ON_TOUCHABLE_OPACITY_PRESS_OUT)
+  })
+
   return useStream<BaraReactTouchableOpacity>(
     ({ setName, emit, addEventTypes }) => {
       setName('dev.barajs.react.touchableOpacity')
@@ -48,28 +37,28 @@ export function useTouchableOpacityStream() {
       ])
 
       const onPressListener = emitter.addListener(
-        ON_TOUCHABLE_OPACITY_PRESS(),
+        ON_TOUCHABLE_OPACITY_PRESS,
         (data: BaraReactTouchableOpacity) => {
           emit(ON_TOUCHABLE_OPACITY_PRESS, data)
         },
       )
 
       const onPressInListener = emitter.addListener(
-        ON_TOUCHABLE_OPACITY_PRESS_IN(),
+        ON_TOUCHABLE_OPACITY_PRESS_IN,
         (data: BaraReactTouchableOpacity) => {
           emit(ON_TOUCHABLE_OPACITY_PRESS_IN, data)
         },
       )
 
       const onPressOutListener = emitter.addListener(
-        ON_TOUCHABLE_OPACITY_PRESS_OUT(),
+        ON_TOUCHABLE_OPACITY_PRESS_OUT,
         (data: BaraReactTouchableOpacity) => {
           emit(ON_TOUCHABLE_OPACITY_PRESS_OUT, data)
         },
       )
 
       const onLongPressListener = emitter.addListener(
-        ON_TOUCHABLE_OPACITY_LONG_PRESS(),
+        ON_TOUCHABLE_OPACITY_LONG_PRESS,
         (data: BaraReactTouchableOpacity) => {
           emit(ON_TOUCHABLE_OPACITY_LONG_PRESS, data)
         },
@@ -80,8 +69,27 @@ export function useTouchableOpacityStream() {
         onPressInListener.remove()
         onPressOutListener.remove()
         onLongPressListener.remove()
-        emitter.removeAllListeners()
       }
     },
   )
+}
+
+// Export and being consumed by any Touchable component
+export const touchableOpacityContext: BaraTouchableOpacityContext = {
+  onPress: data => {
+    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS)
+    emit!(data)
+  },
+  onPressIn: data => {
+    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS_IN)
+    emit!(data)
+  },
+  onPressOut: data => {
+    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS_OUT)
+    emit!(data)
+  },
+  onLongPress: data => {
+    const emit = useEmitter(ON_TOUCHABLE_OPACITY_LONG_PRESS)
+    emit!(data)
+  },
 }

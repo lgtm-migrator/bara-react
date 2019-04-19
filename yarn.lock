@@ -880,27 +880,26 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bara/barn@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.2.0.tgz#c9a230422e54ea18413deee6a10ca50f378a694c"
-  integrity sha512-I4WdWgZhZB17ppsISM2kRze3iHZklh0JRPT1+v83ob/D2oXpGQO9f2lUEhvcPGBByzB7VU5rqFIrm9XszP0oDg==
+"@bara/barn@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.3.0.tgz#4a99999c5761b1afc7ded5d39886d32d7718860c"
+  integrity sha512-g8FpSjjK9P3wCV8mmO7f7jHFm6otAyvNH5ESv48/bRHvt7qeaVhLGPn4yp/TAE2twIDDGLnfw8wX17a2zs/2gg==
   dependencies:
-    "@bara/basics" "^2.2.0"
-    "@bara/core" "^2.2.0"
+    "@bara/basics" "^2.3.0"
+    "@bara/core" "^2.3.0"
     dot-prop "5.0.0"
-    xstream "11.10.0"
 
-"@bara/basics@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.2.0.tgz#a5171f92532703dbbff7e8f70bd8fc3fcde0087a"
-  integrity sha512-1fjbE8cYsdeV/l3HgVzgY2KUr4YhXGmAJzBjDc5Eg1B5Fdd/eNcVsYrruIaRYjGEMQll0xtgFh4IQVjAOnXhGA==
+"@bara/basics@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.3.0.tgz#ef03c1629893ef9fc70dc07111b21b16c842cf1d"
+  integrity sha512-indTcJnrntnFVH+glbHdmGi+yLIdk7fuaYHDcooXvnjszH4nm6aJ5web5a87Ap/zzNyRHmLKPWYy88Hdk4zvUg==
   dependencies:
-    "@bara/core" "^2.2.0"
+    "@bara/core" "^2.3.0"
 
-"@bara/core@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.2.0.tgz#bb1caa0927800137b51dd38e15b9fa9d44ca073f"
-  integrity sha512-qh3PG1TfIhSjUTLoxcwPh8Uh6DS6kuIdOWZhgg/qAvXzAxWdylXA8BkCyP6L7mDmReKdEGGvRjOGa03FUkVFqg==
+"@bara/core@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.3.0.tgz#34b3132135f550dad74c0da20a6b797c78a1f3bd"
+  integrity sha512-5t4sMMeaWCiv9ZslGqtkF68uapMu4kvefmujXIsrhTmKp62r3iwbsTIpkat7c5uiGB4EeKkz061RVBsn45BBYQ==
   dependencies:
     xstream "11.10.0"
 
@@ -1188,11 +1187,6 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
-
-"@types/fbemitter@2.0.32":
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/@types/fbemitter/-/fbemitter-2.0.32.tgz#8ed204da0f54e9c8eaec31b1eec91e25132d082c"
-  integrity sha1-jtIE2g9U6cjq7DGx7skeJRMtCCw=
 
 "@types/glob@^7.1.1":
   version "7.1.1"
@@ -2160,14 +2154,14 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/bara/-/bara-2.2.0.tgz#dd4e57cdfcac915edea25de882827c5294a9c026"
-  integrity sha512-hbYuedzXGp03xpRfxdBg7sHHpBJaFisB0zuW6UKflqigRIoo1Yjj0IJo/F048WlWyWyMUPbmJh6HvrHkPlYd5Q==
+bara@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/bara/-/bara-2.3.0.tgz#b71f8efd7533f3569d460fa2c1134ef66a40db3b"
+  integrity sha512-VE7IYJgGb6mV7QL/JNlwRox8iZHhXYzeZ4UtLBtkVWZidM9YpOrK6U021QUn7pSKni0cso/E/721EBes6miQ/g==
   dependencies:
-    "@bara/barn" "^2.2.0"
-    "@bara/basics" "^2.2.0"
-    "@bara/core" "^2.2.0"
+    "@bara/barn" "^2.3.0"
+    "@bara/basics" "^2.3.0"
+    "@bara/core" "^2.3.0"
 
 base64-js@^1.0.2:
   version "1.3.0"
@@ -4645,19 +4639,12 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbemitter@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/fbemitter/-/fbemitter-2.1.1.tgz#523e14fdaf5248805bb02f62efc33be703f51865"
-  integrity sha1-Uj4U/a9SSIBbsC9i78M75wP1GGU=
-  dependencies:
-    fbjs "^0.8.4"
-
 fbjs-css-vars@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
   integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
 
-fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.9:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=

@@ -1,18 +1,21 @@
-import { useInit, useBarn, useTimerElapsed } from 'bara'
+import { setBarnState, useBarn, useInit, useTimerElapsed } from 'bara'
 
 import {
+  nameOfText,
   nameOfTouchable,
   nameOfTouchableOpacity,
-  useTouchablePress,
-  useTouchableOpacityPress,
   useTextPress,
-  nameOfText,
+  useTouchableOpacityPress,
+  useTouchablePress,
 } from '../../lib'
 
-export function welcomeTrigger(setState: (key: string, value: any) => void) {
+export function welcomeTrigger() {
   useInit(() => {
-    setState('welcome', `Loading...`)
+    setBarnState('welcome', `Loading...`)
     useBarn('welcome', newMessage => {
+      // tslint:disable-next-line
+      console.log('Welcoming', newMessage)
+      return
     })
   })
 
@@ -21,7 +24,7 @@ export function welcomeTrigger(setState: (key: string, value: any) => void) {
       nameOf: nameOfTouchable('welcome-button'),
     },
     ({ name }) => {
-      setState('welcome', `You (${name}) are already welcomed!`)
+      setBarnState('welcome', `You (${name}) are already welcomed!`)
     },
   )
 
@@ -31,15 +34,16 @@ export function welcomeTrigger(setState: (key: string, value: any) => void) {
     },
     ({ name }) => {
       alert(`${name} is PRESSED! YAY !!!`)
-      console.log('hey, are you working?')
     },
   )
 
   useTimerElapsed(5, () => {
-    setState('welcome', `Who are you?`)
+    setBarnState('welcome', `Who are you?`)
   })
 
   useBarn('welcome', newMessage => {
+    // tslint:disable-next-line
     console.log(`Barn welcome changed to: ${newMessage}`)
+    return
   })
 }

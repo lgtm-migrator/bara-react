@@ -1,5 +1,4 @@
-import { useStream } from 'bara'
-import { EventEmitter } from 'fbemitter'
+import { createEmitter, useEmitter, useStream } from 'bara'
 
 import { BaraReactView, ON_VIEW_LAYOUT } from './event'
 
@@ -7,21 +6,18 @@ export interface BaraViewContext {
   onLayout: (data: BaraReactView) => void
 }
 
-const emitter = new EventEmitter()
-
-export const viewContext: BaraViewContext = {
-  onLayout: data => {
-    emitter.emit(ON_VIEW_LAYOUT({ name: '' }), data)
-  },
-}
-
 export function useViewStream() {
+  const emitter = createEmitter(({ setName, addEventType }) => {
+    setName('dev.barajs.react.view.emitter')
+    addEventType(ON_VIEW_LAYOUT)
+  })
+
   return useStream<BaraReactView>(({ setName, emit, addEventTypes }) => {
     setName('dev.barajs.react.view')
     addEventTypes([ON_VIEW_LAYOUT])
 
     const onLayoutListener = emitter.addListener(
-      ON_VIEW_LAYOUT({ name: '' }),
+      ON_VIEW_LAYOUT,
       (data: BaraReactView) => {
         emit(ON_VIEW_LAYOUT, data)
       },
@@ -29,7 +25,13 @@ export function useViewStream() {
 
     return () => {
       onLayoutListener.remove()
-      emitter.removeAllListeners()
     }
   })
+}
+
+export const viewContext: BaraViewContext = {
+  onLayout: data => {
+    const emit = useEmitter(ON_VIEW_LAYOUT)
+    emit!(data)
+  },
 }

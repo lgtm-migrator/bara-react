@@ -1,5 +1,4 @@
-import { useStream } from 'bara'
-import { EventEmitter, EventSubscription } from 'fbemitter'
+import { createEmitter, useEmitter, useStream } from 'bara'
 import React from 'react'
 
 import {
@@ -17,27 +16,15 @@ export interface BaraTouchableContext {
   onLongPress: (data: BaraReactTouchable) => void
 }
 
-// Emitter handle the reference with React Component via Context API
-const emitter = new EventEmitter()
-
-// Export and being consumed by any Touchable component
-export const touchableContext: BaraTouchableContext = {
-  onPress: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS(), data)
-  },
-  onPressIn: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS_IN(), data)
-  },
-  onPressOut: data => {
-    emitter.emit(ON_TOUCHABLE_PRESS_OUT(), data)
-  },
-  onLongPress: data => {
-    emitter.emit(ON_TOUCHABLE_LONG_PRESS(), data)
-  },
-}
-
-// BaraJS Stream Register
 export function useTouchableStream() {
+  const emitter = createEmitter(({ setName, addEventType }) => {
+    setName('dev.barajs.react.touchable.emitter')
+    addEventType(ON_TOUCHABLE_LONG_PRESS)
+    addEventType(ON_TOUCHABLE_PRESS)
+    addEventType(ON_TOUCHABLE_PRESS_IN)
+    addEventType(ON_TOUCHABLE_PRESS_OUT)
+  })
+
   return useStream<BaraReactTouchable>(({ setName, emit, addEventTypes }) => {
     setName('dev.barajs.react.touchable')
     addEventTypes([
@@ -48,28 +35,28 @@ export function useTouchableStream() {
     ])
 
     const onPressListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS(),
+      ON_TOUCHABLE_PRESS,
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS, data)
       },
     )
 
     const onPressInListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS_IN(),
+      ON_TOUCHABLE_PRESS_IN,
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS_IN, data)
       },
     )
 
     const onPressOutListener = emitter.addListener(
-      ON_TOUCHABLE_PRESS_OUT(),
+      ON_TOUCHABLE_PRESS_OUT,
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_PRESS_OUT, data)
       },
     )
 
     const onLongPressListener = emitter.addListener(
-      ON_TOUCHABLE_LONG_PRESS(),
+      ON_TOUCHABLE_LONG_PRESS,
       (data: BaraReactTouchable) => {
         emit(ON_TOUCHABLE_LONG_PRESS, data)
       },
@@ -80,7 +67,26 @@ export function useTouchableStream() {
       onPressInListener.remove()
       onPressOutListener.remove()
       onLongPressListener.remove()
-      emitter.removeAllListeners()
     }
   })
+}
+
+// Export and being consumed by any Touchable component
+export const touchableContext: BaraTouchableContext = {
+  onPress: data => {
+    const emit = useEmitter(ON_TOUCHABLE_PRESS)
+    emit!(data)
+  },
+  onPressIn: data => {
+    const emit = useEmitter(ON_TOUCHABLE_PRESS_IN)
+    emit!(data)
+  },
+  onPressOut: data => {
+    const emit = useEmitter(ON_TOUCHABLE_PRESS_OUT)
+    emit!(data)
+  },
+  onLongPress: data => {
+    const emit = useEmitter(ON_TOUCHABLE_LONG_PRESS)
+    emit!(data)
+  },
 }
