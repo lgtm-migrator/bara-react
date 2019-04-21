@@ -28,11 +28,8 @@ export function welcomeTrigger() {
     },
   )
 
-  useTouchableOpacityPress(
-    {
-      nameOf: nameOfTouchableOpacity('greet-button'),
-    },
-    ({ name }) => {
+  useTouchableOpacityPress(nameOfTouchableOpacity('greet-button'))(
+    ({ name }: any) => {
       alert(`${name} is PRESSED! YAY !!!`)
     },
   )

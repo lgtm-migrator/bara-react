@@ -1,12 +1,34 @@
-import { TouchableOpacityEventFilter } from './event'
 import {
-  TouchableOpacityPressCallback,
-  useTouchableOpacityPressTrigger,
-} from './trigger'
+  ActionPipeFunction,
+  BaraEventPayload,
+  ConditionPipe,
+  createPipe,
+  useAction,
+  useCondition,
+  useEvent,
+  useTrigger,
+} from 'bara'
 
-export function useTouchableOpacityPress(
-  eventFilter: TouchableOpacityEventFilter,
-  callback: TouchableOpacityPressCallback,
-) {
-  return useTouchableOpacityPressTrigger(eventFilter, callback)
+import {
+  BaraReactTouchableOpacity,
+  TouchableOpacityEventFilter,
+  useTouchableOpacityPressEvent,
+} from './event'
+
+export const useTouchableOpacityPress = (
+  ...conditions: Array<ConditionPipe<BaraReactTouchableOpacity>>
+) => (...actions: ActionPipeFunction[]) => {
+  const piper = (
+    data: BaraReactTouchableOpacity,
+    payload: BaraEventPayload<BaraReactTouchableOpacity>,
+  ) => {
+    createPipe(data, payload)(
+      ...(conditions as any),
+    )(...actions)
+  }
+  useTrigger<BaraReactTouchableOpacity>(() => {
+    const event = useTouchableOpacityPressEvent()
+    const action = useAction(piper)
+    return { event, action }
+  })
 }
