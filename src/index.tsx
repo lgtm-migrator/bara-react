@@ -4,7 +4,6 @@ import './index.css'
 import {
   useComponentsStream,
   useReactApp,
-  useViewStream,
 } from './lib'
 
 import { welcomeTrigger } from './examples/features/welcome'
@@ -16,7 +15,6 @@ const BaraApp = () => {
     welcome: 'Welcome to Bara React App!',
   })
   useReactApp({ name: 'bara-app', App })
-  useViewStream()
   useComponentsStream({TouchableOpacity: false})
   welcomeTrigger()
 }
