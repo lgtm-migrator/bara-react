@@ -1,5 +1,5 @@
 import {
-  ActionPipeFunction,
+  ActionPipe,
   BaraEventPayload,
   ConditionPipe,
   createPipe,
@@ -17,14 +17,12 @@ import {
 
 export const useTouchableOpacityPress = (
   ...conditions: Array<ConditionPipe<BaraReactTouchableOpacity>>
-) => (...actions: ActionPipeFunction[]) => {
+) => (...actions: Array<ActionPipe<BaraReactTouchableOpacity>>) => {
   const piper = (
     data: BaraReactTouchableOpacity,
     payload: BaraEventPayload<BaraReactTouchableOpacity>,
   ) => {
-    createPipe(data, payload)(
-      ...(conditions as any),
-    )(...actions)
+    createPipe(data, payload)(...(conditions as any))(...actions)
   }
   useTrigger<BaraReactTouchableOpacity>(() => {
     const event = useTouchableOpacityPressEvent()
