@@ -1,5 +1,5 @@
-import { BaraReactTouchableOpacity, TouchableOpacityEventFilter } from './event'
+import { kindOf, nameOf } from '../../functions/common'
 
-export const nameOfTouchableOpacity = (checkName: string) => ({
-  name,
-}: BaraReactTouchableOpacity) => checkName === name
+export const nameOfTouchableOpacity = nameOf
+
+export const kindOfTouchableOpacity = nameOf

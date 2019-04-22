@@ -1,8 +1,7 @@
 export interface BaraBaseComponentProps {
   data?: any
   name?: string
-  className?: string
-  id?: string
+  kind?: string
 }
 
 export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
