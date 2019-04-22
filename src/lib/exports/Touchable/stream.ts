@@ -1,4 +1,4 @@
-import { createEmitter, useEmitter, useStream } from 'bara'
+import { createEmitter, EventType, useEmitter, useStream } from 'bara'
 import React from 'react'
 
 import {
@@ -71,22 +71,22 @@ export function useTouchableStream() {
   })
 }
 
+const getEmitter = (eventType: EventType) => {
+  let emit = useEmitter(eventType)
+  const warn = () => {
+    // tslint:disable-next-line
+    process.env.NODE_ENV === 'development' && console.warn(
+      `[Touchable] No action executed because Touchable is "false" when you call "useComponentsStream", call "useTouchableStream" to register this stream or change its value to "true"!`,
+    )
+  }
+  emit = emit! || warn
+  return emit
+}
+
 // Export and being consumed by any Touchable component
 export const touchableContext: BaraTouchableContext = {
-  onPress: data => {
-    const emit = useEmitter(ON_TOUCHABLE_PRESS)
-    emit!(data)
-  },
-  onPressIn: data => {
-    const emit = useEmitter(ON_TOUCHABLE_PRESS_IN)
-    emit!(data)
-  },
-  onPressOut: data => {
-    const emit = useEmitter(ON_TOUCHABLE_PRESS_OUT)
-    emit!(data)
-  },
-  onLongPress: data => {
-    const emit = useEmitter(ON_TOUCHABLE_LONG_PRESS)
-    emit!(data)
-  },
+  onPress: data => getEmitter(ON_TOUCHABLE_PRESS)(data),
+  onPressIn: data => getEmitter(ON_TOUCHABLE_PRESS_IN)(data),
+  onPressOut: data => getEmitter(ON_TOUCHABLE_PRESS_OUT)(data),
+  onLongPress: data => getEmitter(ON_TOUCHABLE_LONG_PRESS)(data),
 }
