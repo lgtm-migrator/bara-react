@@ -1,4 +1,4 @@
-import { createEmitter, useEmitter, useStream, EventType } from 'bara'
+import { createEmitter, EventType, useEmitter, useStream } from 'bara'
 
 import {
   BaraReactTouchableOpacity,
@@ -15,7 +15,6 @@ export interface BaraTouchableOpacityContext {
   onLongPress: (data: BaraReactTouchableOpacity) => void
 }
 
-// BaraJS Stream Register
 export function useTouchableOpacityStream() {
   const emitter = createEmitter(({ setName, addEventType }) => {
     setName('dev.barajs.react.touchable-opacity.emitter')
