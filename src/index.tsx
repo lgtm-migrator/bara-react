@@ -2,10 +2,8 @@ import { register, useBarnStream, useInitStream } from 'bara'
 import App from './App'
 import './index.css'
 import {
+  useComponentsStream,
   useReactApp,
-  useTextStream,
-  useTouchableOpacityStream,
-  useTouchableStream,
   useViewStream,
 } from './lib'
 
@@ -19,9 +17,7 @@ const BaraApp = () => {
   })
   useReactApp({ name: 'bara-app', App })
   useViewStream()
-  useTouchableStream()
-  useTouchableOpacityStream()
-  useTextStream()
+  useComponentsStream({TouchableOpacity: false})
   welcomeTrigger()
 }
 
