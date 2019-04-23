@@ -880,19 +880,19 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bara/barn@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.3.1.tgz#74af0cac66534fd881cc4e31e5ad8d7011bb017c"
-  integrity sha512-0zS72TLvaprjHpOrj8O6f91lPB52qIoOVee3Zu+BZFdU2wkWCcgJf/Ag33txsfHRcg6eIi2h5Pbcv+aSa0C0TQ==
+"@bara/barn@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.3.2.tgz#cf0f606873cb93fe02f449f2d2d1365f7d26b58e"
+  integrity sha512-zqPZBQDVMxmq82XDpIRUaxINNjtZAIAdwVylRtE8hyffSon63o+JPCzFWqGImfXCyePDinHgm8GUxA4pQdCLTg==
   dependencies:
-    "@bara/basics" "^2.3.1"
+    "@bara/basics" "^2.3.2"
     "@bara/core" "^2.3.1"
     dot-prop "5.0.0"
 
-"@bara/basics@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.3.1.tgz#27ec2f157f327af85b500a4ca31bdfb9f9a69334"
-  integrity sha512-QkSvXFcYwzlwRmv1r15jUVc73WK/bspe6A1geqJpRQJ66+04rq+5Vq0/QsOISSC4Y5rf+eewiVF6dVGDNMiXDA==
+"@bara/basics@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.3.2.tgz#fb73382a64712441b31ab3d1fb8f7ff6bdc367aa"
+  integrity sha512-v0TIQP7K7KMi4MDujhREEZGcfWTjPwTiRUrw+VIE0laeYl1MEhMQc2nKNoqPzBf1pZstLEv7vbrrgKZWtBU+vw==
   dependencies:
     "@bara/core" "^2.3.1"
 
@@ -2162,13 +2162,13 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/bara/-/bara-2.3.1.tgz#736a827ca5c3f9966a244face477f8d98f490788"
-  integrity sha512-oF9mY8D11JHy/AE+dISVZbX9Us+ueYz38plolLUOuKLT4loa52Ov5Gw4xqfncpMcF/amWyVLwNE3pCCT6A9Rdg==
+bara@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/bara/-/bara-2.3.2.tgz#0fdbf5d7b407bab4db1f322e0c20cef9dd2bfb1f"
+  integrity sha512-LdZg9IgG5TSYwvPF4fXSmTB5OblmhtIzNTqHWq0swgYTVAyM+Q/QXEEycpQ61+rpqCYqHE9ibr8Tk8miDCUwhg==
   dependencies:
-    "@bara/barn" "^2.3.1"
-    "@bara/basics" "^2.3.1"
+    "@bara/barn" "^2.3.2"
+    "@bara/basics" "^2.3.2"
     "@bara/core" "^2.3.1"
 
 base64-js@^1.0.2:
