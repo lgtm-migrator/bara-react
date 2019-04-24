@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/barajs/bara-react/compare/v2.0.3...v2.0.4) (2019-04-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bara to v2.4.0 ([7bd8ff4](https://github.com/barajs/bara-react/commit/7bd8ff4))
+
 ## [2.0.3](https://github.com/barajs/bara-react/compare/v2.0.2...v2.0.3) (2019-04-23)
 
 
