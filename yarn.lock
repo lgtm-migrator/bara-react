@@ -880,26 +880,26 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bara/barn@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.3.2.tgz#cf0f606873cb93fe02f449f2d2d1365f7d26b58e"
-  integrity sha512-zqPZBQDVMxmq82XDpIRUaxINNjtZAIAdwVylRtE8hyffSon63o+JPCzFWqGImfXCyePDinHgm8GUxA4pQdCLTg==
+"@bara/barn@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@bara/barn/-/barn-2.4.0.tgz#79635540d43dd48b75c878fb3150ab3d192419bc"
+  integrity sha512-RDuxCQSkIqBDVJJ97JTyZLB6WmTZhCqFEpJjKX4Y6l4c2YeLCY1ggePSm2ZQjW9MjZiOEXQ43dOimqMEm59OzA==
   dependencies:
-    "@bara/basics" "^2.3.2"
-    "@bara/core" "^2.3.1"
+    "@bara/basics" "^2.4.0"
+    "@bara/core" "^2.4.0"
     dot-prop "5.0.0"
 
-"@bara/basics@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.3.2.tgz#fb73382a64712441b31ab3d1fb8f7ff6bdc367aa"
-  integrity sha512-v0TIQP7K7KMi4MDujhREEZGcfWTjPwTiRUrw+VIE0laeYl1MEhMQc2nKNoqPzBf1pZstLEv7vbrrgKZWtBU+vw==
+"@bara/basics@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@bara/basics/-/basics-2.4.0.tgz#5a27b15c2f12e4ed1d8c724f883377b0a3d1654f"
+  integrity sha512-YaMaJ9Egy9RuqEgryRhq956Jk+lTPqkQDTRZUjOBCIzUAJL5HRK6f4C8lXNMHCQ3Lb4N+FLh5iD+y9x4QKRiGw==
   dependencies:
-    "@bara/core" "^2.3.1"
+    "@bara/core" "^2.4.0"
 
-"@bara/core@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.3.1.tgz#5b1efb982b2ce59e1325a9ed33fa7ffcede75c40"
-  integrity sha512-8r+rwjHVWhMM9d4GTkNTM+OqHUGAVx/wUiOH+s68IiiBtnYTYlty/RQMKLE7uNcVHbPWvXArW9NLqQyPmQmAhA==
+"@bara/core@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@bara/core/-/core-2.4.0.tgz#b3a85ea637fe2b7be374f77dd64514e2fa4426cc"
+  integrity sha512-Gmv/1iL2j2JKmRpVfZFuAWCN2kM9R15/Pwecz/PxQELVKy0qvjfTQYeCNNEcHxkgUFJd4e0WOQQ3uU0WrojTwQ==
   dependencies:
     xstream "11.10.0"
 
@@ -2162,14 +2162,14 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/bara/-/bara-2.3.2.tgz#0fdbf5d7b407bab4db1f322e0c20cef9dd2bfb1f"
-  integrity sha512-LdZg9IgG5TSYwvPF4fXSmTB5OblmhtIzNTqHWq0swgYTVAyM+Q/QXEEycpQ61+rpqCYqHE9ibr8Tk8miDCUwhg==
+bara@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/bara/-/bara-2.4.0.tgz#f8fdb2b074c688b77ac421b0147caf579b396148"
+  integrity sha512-qpW78R6Wd0VOQGBzG47+KIw/TBLExQobvrgFcmkA65/m0TWASMCdfwAGQErBD6ggJNXdz2smTeDdw74UDGTtcQ==
   dependencies:
-    "@bara/barn" "^2.3.2"
-    "@bara/basics" "^2.3.2"
-    "@bara/core" "^2.3.1"
+    "@bara/barn" "^2.4.0"
+    "@bara/basics" "^2.4.0"
+    "@bara/core" "^2.4.0"
 
 base64-js@^1.0.2:
   version "1.3.0"
