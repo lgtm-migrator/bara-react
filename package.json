@@ -4,7 +4,7 @@
   "description": "BaraJS for React creative",
   "homepage": "https://barajs.dev",
   "repository": "https://github.com/barajs/bara-react",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,18 +16,17 @@
     "src/lib"
   ],
   "dependencies": {
-    "bara": "2.3.2",
+    "bara": "2.4.0",
     "react-native-web": "0.11.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.2",
     "@semantic-release/git": "7.0.8",
     "@types/jest": "24.0.11",
-    "@types/node": "11.13.5",
-    "@types/react": "16.8.13",
+    "@types/node": "11.13.7",
+    "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
-    "@types/react-native": "0.57.46",
-    "@typescript-eslint/typescript-estree": "1.6.0",
+    "@types/react-native": "0.57.49",
     "patch-package": "6.1.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -37,7 +36,7 @@
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "4.0.0",
-    "typescript": "3.4.4"
+    "typescript": "3.4.5"
   },
   "peerDependencies": {
     "react": ">=16.8",

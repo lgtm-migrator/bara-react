@@ -1,3 +1,24 @@
+## [2.0.4](https://github.com/barajs/bara-react/compare/v2.0.3...v2.0.4) (2019-04-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bara to v2.4.0 ([7bd8ff4](https://github.com/barajs/bara-react/commit/7bd8ff4))
+
+## [2.0.3](https://github.com/barajs/bara-react/compare/v2.0.2...v2.0.3) (2019-04-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bara to v2.3.2 ([c5e8141](https://github.com/barajs/bara-react/commit/c5e8141))
+
+## [2.0.2](https://github.com/barajs/bara-react/compare/v2.0.1...v2.0.2) (2019-04-22)
+
+
+### Bug Fixes
+
+* **use-barn-state:** change initialValue to any ([db57973](https://github.com/barajs/bara-react/commit/db57973))
+
 ## [2.0.1](https://github.com/barajs/bara-react/compare/v2.0.0...v2.0.1) (2019-04-19)
 
 

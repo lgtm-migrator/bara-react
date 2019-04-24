@@ -4,9 +4,9 @@ import { useBaraContext } from '../context'
 
 export function useBarnState(
   key: string,
-  initValue = '',
+  initValue?: any,
 ): [typeof initValue, (newState: typeof initValue) => void] {
-  const [data, setData] = useState(initValue)
+  const [data, setData] = useState(initValue || null)
   const context = useBaraContext()
 
   const setStateProxy = (newState: any): void => {
