@@ -2141,7 +2141,7 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-bara@2.4.0:
+bara@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bara/-/bara-2.4.0.tgz#f8fdb2b074c688b77ac421b0147caf579b396148"
   integrity sha512-qpW78R6Wd0VOQGBzG47+KIw/TBLExQobvrgFcmkA65/m0TWASMCdfwAGQErBD6ggJNXdz2smTeDdw74UDGTtcQ==
@@ -9874,7 +9874,7 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-web@0.11.2:
+react-native-web@^0.11.2:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.11.2.tgz#f3550589347be1f402f0641fefca687ca64a1750"
   integrity sha512-EVUrBftCZBfUCOrwKJPh+hiGmDieBPL+5m+57BFg0UIH6uSmgvXK9r/xy6rQXLRMTgk3krDd94nRo3/31p69+A==
