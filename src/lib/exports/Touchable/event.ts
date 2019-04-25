@@ -5,6 +5,7 @@ export interface BaraReactTouchable {
   className?: string
   ref?: any
   id?: string
+  event?: any
 }
 
 export const ON_TOUCHABLE_PRESS = createEventType('ON_TOUCHABLE_PRESSED')
