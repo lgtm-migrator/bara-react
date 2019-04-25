@@ -1,5 +1,17 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "packageRules": [
+    {
+	  "packageName": ["bara"],
+      "groupName": "bara packages",
+      "pin": false,
+      "automerge": true
+	}
+  ],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  }
 }

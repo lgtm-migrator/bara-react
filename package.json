@@ -16,8 +16,8 @@
     "src/lib"
   ],
   "dependencies": {
-    "bara": "2.4.0",
-    "react-native-web": "0.11.2"
+    "bara": "^2.4.0",
+    "react-native-web": "^0.11.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.2",
@@ -39,7 +39,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react-dom": ">=16.8",
+    "bara": ">=2.4"
   },
   "scripts": {
     "compile": "rm -rf dist && yarn compile:tsc",
