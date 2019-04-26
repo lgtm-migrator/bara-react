@@ -1,7 +1,7 @@
 import { TouchableEventFilter } from './event'
 import { TouchablePressCallback, useTouchablePressTrigger } from './trigger'
 
-export function useTouchablePress(
+export function whenTouchablePress(
   eventFilter: TouchableEventFilter,
   callback: TouchablePressCallback,
 ) {

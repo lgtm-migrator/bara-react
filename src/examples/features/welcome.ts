@@ -4,9 +4,9 @@ import {
   nameOfText,
   nameOfTouchable,
   nameOfTouchableOpacity,
-  useTextPress,
-  useTouchableOpacityPress,
-  useTouchablePress,
+  whenTextPress,
+  whenTouchableOpacityPress,
+  whenTouchablePress,
 } from '../../lib'
 
 export function welcomeTrigger() {
@@ -19,16 +19,11 @@ export function welcomeTrigger() {
     })
   })
 
-  useTouchablePress(
-    {
-      nameOf: nameOfTouchable('welcome-button'),
-    },
-    ({ name }) => {
-      setBarnState('welcome', `You (${name}) are already welcomed!`)
-    },
-  )
+  whenTouchablePress(nameOfTouchable('welcome-button'))(({ name }) => {
+    setBarnState('welcome', `You (${name}) are already welcomed!`)
+  })
 
-  useTouchableOpacityPress(nameOfTouchableOpacity('greet-button'))(
+  whenTouchableOpacityPress(nameOfTouchableOpacity('greet-button'))(
     ({ name }: any) => {
       alert(`${name} is PRESSED! YAY !!!`)
     },
