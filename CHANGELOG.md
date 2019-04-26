@@ -1,3 +1,30 @@
+# [3.0.0](https://github.com/barajs/bara-react/compare/v2.0.4...v3.0.0) (2019-04-26)
+
+
+### Bug Fixes
+
+* **bara:** new operators and change hook function name ([#20](https://github.com/barajs/bara-react/issues/20)) ([319bff7](https://github.com/barajs/bara-react/commit/319bff7))
+* **Text:** correct Text new API event ([da75cf4](https://github.com/barajs/bara-react/commit/da75cf4))
+* **TouchableOpacity:** bind event to bara with React event.persist() to preserve its props ([79a23dd](https://github.com/barajs/bara-react/commit/79a23dd))
+
+
+### Features
+
+* **functions:** new opearator useComponentsStream for register all stream at once (can exclude) ([447b6ad](https://github.com/barajs/bara-react/commit/447b6ad))
+* **Text:** use new Bara hook piper ([f7bc046](https://github.com/barajs/bara-react/commit/f7bc046))
+* **Touchable:** add `onPressIn`, `onPressOut`, `onLongPress` ([6d14a05](https://github.com/barajs/bara-react/commit/6d14a05))
+* **Touchable:** change hook params with new Bara API ([cea652b](https://github.com/barajs/bara-react/commit/cea652b))
+* **Touchable:** rename condition piper ([7844f5a](https://github.com/barajs/bara-react/commit/7844f5a))
+* **TouchableOpacity:** add new event handler and change hook method ([279c814](https://github.com/barajs/bara-react/commit/279c814))
+* **TouchableOpacity:** change the way hook take params ([6989026](https://github.com/barajs/bara-react/commit/6989026))
+* **View:** change hook function params with new Bara API ([beeec75](https://github.com/barajs/bara-react/commit/beeec75))
+
+
+### BREAKING CHANGES
+
+* **View:** make hook API pipable
+* **TouchableOpacity:** change method name of `useTouchableOpacityPress` to `whenTouchableOpacityPress`
+
 ## [2.0.4](https://github.com/barajs/bara-react/compare/v2.0.3...v2.0.4) (2019-04-24)
 
 
