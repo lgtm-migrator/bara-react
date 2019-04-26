@@ -1,4 +1,4 @@
-import { createEmitter, useEmitter, useStream } from 'bara'
+import { createEmitter, EventType, useEmitter, useStream } from 'bara'
 
 import { BaraReactView, ON_VIEW_LAYOUT } from './event'
 
@@ -29,9 +29,18 @@ export function useViewStream() {
   })
 }
 
+const getEmitter = (eventType: EventType) => {
+  let emit = useEmitter(eventType)
+  const warn = () => {
+    // tslint:disable-next-line
+    process.env.NODE_ENV === 'development' && console.warn(
+      `[View] No action executed because View is "false" when you call "useComponentsStream", call "useViewStream" to register this stream or change its value to "true"!`,
+    )
+  }
+  emit = emit! || warn
+  return emit
+}
+
 export const viewContext: BaraViewContext = {
-  onLayout: data => {
-    const emit = useEmitter(ON_VIEW_LAYOUT)
-    emit!(data)
-  },
+  onLayout: data => getEmitter(ON_VIEW_LAYOUT)(data),
 }
