@@ -14,22 +14,76 @@ export const TouchableOpacity = React.forwardRef(
     {
       TouchableComponent,
       onPress: _onPress,
+      onPressIn: _onPressIn,
+      onPressOut: _onPressOut,
+      onLongPress: _onLongPress,
       name,
+      kind,
       ...props
     }: TouchableOpacityProps,
     ref: any,
   ) => {
     const context = useBaraContext()
-    const onPress: typeof _onPress = e => {
-      context.components.touchableOpacity.onPress({ name, ...props })
+    
+    const onPress: typeof _onPress = event => {
+      event.persist()
+      context.components.touchableOpacity.onPress({
+        name,
+        kind,
+        event,
+        ...props,
+      })
       if (_onPress) {
-        _onPress(e)
+        _onPress(event)
       }
     }
+
+    const onPressIn: typeof _onPressIn = event => {
+      event.persist()
+      context.components.touchableOpacity.onPressIn({
+        name,
+        kind,
+        event,
+        ...props,
+      })
+      if (_onPressIn) {
+        _onPressIn(event)
+      }
+    }
+
+    const onPressOut: typeof _onPressOut = event => {
+      event.persist()
+      context.components.touchableOpacity.onPressOut({
+        name,
+        kind,
+        event,
+        ...props,
+      })
+      if (_onPressOut) {
+        _onPressOut(event)
+      }
+    }
+
+    const onLongPress: typeof _onLongPress = event => {
+      event.persist()
+      context.components.touchableOpacity.onLongPress({
+        name,
+        kind,
+        event,
+        ...props,
+      })
+      if (_onLongPress) {
+        _onLongPress(event)
+      }
+    }
+
     return (
       <Touchable
         ref={ref}
         onPress={onPress}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+        onLongPress={onLongPress}
         TouchableComponent={TouchableOpacityOriginal}
         activeOpacity={0.5}
         {...props}

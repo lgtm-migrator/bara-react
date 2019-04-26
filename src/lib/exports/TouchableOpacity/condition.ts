@@ -1,9 +1,5 @@
-import { BaraReactTouchableOpacity, TouchableOpacityEventFilter } from './event'
+import { kindOf, nameOf } from '../../functions/common'
 
-export const nameOfTouchableOpacity = (name: string) => (
-  triggeringEvent: BaraReactTouchableOpacity,
-): boolean => (name ? name === triggeringEvent.name : true)
+export const nameOfTouchableOpacity = nameOf
 
-export const classOfTouchableOpacity = (className: string) => (
-  triggeringEvent: BaraReactTouchableOpacity,
-): boolean => (className ? className === triggeringEvent.className : true)
+export const kindOfTouchableOpacity = kindOf

@@ -1,10 +1,10 @@
 import { createEventType, useEvent } from 'bara'
 
-export interface BaraReactText {
+import { BaraBaseComponentProps } from '../../models'
+
+export interface BaraReactText extends BaraBaseComponentProps {
   name?: string
-  className?: string
   ref?: any
-  id?: any
 }
 
 export const ON_TEXT_PRESS = createEventType('ON_TEXT_PRESS')

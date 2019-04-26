@@ -4,9 +4,11 @@ import {
   nameOfText,
   nameOfTouchable,
   nameOfTouchableOpacity,
-  useTextPress,
-  useTouchableOpacityPress,
-  useTouchablePress,
+  nameOfView,
+  whenTextPress,
+  whenTouchableOpacityPress,
+  whenTouchablePress,
+  whenViewLayout,
 } from '../../lib'
 
 export function welcomeTrigger() {
@@ -19,23 +21,27 @@ export function welcomeTrigger() {
     })
   })
 
-  useTouchablePress(
-    {
-      nameOf: nameOfTouchable('welcome-button'),
-    },
-    ({ name }) => {
-      setBarnState('welcome', `You (${name}) are already welcomed!`)
+  whenViewLayout(nameOfView('main-container'))(data => {
+    // tslint:disbale-next-line
+    console.log('Main container is updating its layout', data)
+  })
+
+  whenTouchablePress(nameOfTouchable('welcome-button'))(({ name }) => {
+    setBarnState('welcome', `You (${name}) are already welcomed!`)
+  })
+
+  whenTouchableOpacityPress(nameOfTouchableOpacity('greet-button'))(
+    (data: any) => {
+      alert(`${data.name} is PRESSED! YAY !!!`)
+      // tslint:disbale-next-line
+      console.log('greet-button', data)
     },
   )
 
-  useTouchableOpacityPress(
-    {
-      nameOf: nameOfTouchableOpacity('greet-button'),
-    },
-    ({ name }) => {
-      alert(`${name} is PRESSED! YAY !!!`)
-    },
-  )
+  whenTextPress(nameOfText('pressable-text'))((data: any) => {
+    // tslint:disbale-next-line
+    console.log('pressable-text', data)
+  })
 
   useTimerElapsed(5, () => {
     setBarnState('welcome', `Who are you?`)

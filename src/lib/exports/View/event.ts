@@ -1,8 +1,8 @@
 import { createEventType, useEvent } from 'bara'
 
-export interface BaraReactView {
-  name?: string
-  className?: string
+import { BaraBaseComponentProps } from '../../models'
+
+export interface BaraReactView extends BaraBaseComponentProps {
   ref?: any
   id?: any
 }

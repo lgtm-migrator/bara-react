@@ -16,8 +16,8 @@
     "src/lib"
   ],
   "dependencies": {
-    "bara": "2.4.0",
-    "react-native-web": "0.11.2"
+    "bara": "^2.4.0",
+    "react-native-web": "^0.11.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.2",
@@ -27,7 +27,6 @@
     "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
     "@types/react-native": "0.57.49",
-    "@typescript-eslint/typescript-estree": "1.7.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-scripts": "2.1.8",
@@ -40,7 +39,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react-dom": ">=16.8",
+    "bara": ">=2.4"
   },
   "scripts": {
     "compile": "rm -rf dist && yarn compile:tsc",

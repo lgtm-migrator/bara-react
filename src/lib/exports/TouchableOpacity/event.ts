@@ -1,10 +1,10 @@
 import { createEventType, useEvent } from 'bara'
 
-export interface BaraReactTouchableOpacity {
+import { BaraBaseComponentProps } from '../../models'
+
+export interface BaraReactTouchableOpacity extends BaraBaseComponentProps {
   name?: string
-  className?: string
   ref?: any
-  id?: string
 }
 
 export const ON_TOUCHABLE_OPACITY_PRESS = createEventType(

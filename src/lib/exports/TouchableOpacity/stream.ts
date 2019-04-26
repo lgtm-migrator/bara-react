@@ -1,4 +1,4 @@
-import { createEmitter, useEmitter, useStream } from 'bara'
+import { createEmitter, EventType, useEmitter, useStream } from 'bara'
 
 import {
   BaraReactTouchableOpacity,
@@ -15,7 +15,6 @@ export interface BaraTouchableOpacityContext {
   onLongPress: (data: BaraReactTouchableOpacity) => void
 }
 
-// BaraJS Stream Register
 export function useTouchableOpacityStream() {
   const emitter = createEmitter(({ setName, addEventType }) => {
     setName('dev.barajs.react.touchable-opacity.emitter')
@@ -74,22 +73,22 @@ export function useTouchableOpacityStream() {
   )
 }
 
+const getEmitter = (eventType: EventType) => {
+  let emit = useEmitter(eventType)
+  const warn = () => {
+    // tslint:disable-next-line
+    process.env.NODE_ENV === 'development' && console.warn(
+      `[TouchableOpacity] No action executed because TouchableOpacity is "false" when you call "useComponentsStream", call "useTouchableOpacityStream" to register this stream or change its value to "true"!`,
+    )
+  }
+  emit = emit! || warn
+  return emit
+}
+
 // Export and being consumed by any Touchable component
 export const touchableOpacityContext: BaraTouchableOpacityContext = {
-  onPress: data => {
-    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS)
-    emit!(data)
-  },
-  onPressIn: data => {
-    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS_IN)
-    emit!(data)
-  },
-  onPressOut: data => {
-    const emit = useEmitter(ON_TOUCHABLE_OPACITY_PRESS_OUT)
-    emit!(data)
-  },
-  onLongPress: data => {
-    const emit = useEmitter(ON_TOUCHABLE_OPACITY_LONG_PRESS)
-    emit!(data)
-  },
+  onPress: data => getEmitter(ON_TOUCHABLE_OPACITY_PRESS)(data),
+  onPressIn: data => getEmitter(ON_TOUCHABLE_OPACITY_PRESS_IN)(data),
+  onPressOut: data => getEmitter(ON_TOUCHABLE_OPACITY_PRESS_OUT)(data),
+  onLongPress: data => getEmitter(ON_TOUCHABLE_OPACITY_LONG_PRESS)(data),
 }

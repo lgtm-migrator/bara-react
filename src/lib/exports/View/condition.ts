@@ -1,5 +1,5 @@
-import { BaraReactView } from './event'
+import { kindOf, nameOf } from '../../functions/common'
 
-export const nameOfView = (name: string) => (
-  triggeringEvent: BaraReactView,
-): boolean => (name ? name === triggeringEvent.name : true)
+export const nameOfView = nameOf
+
+export const kindOfView  = kindOf

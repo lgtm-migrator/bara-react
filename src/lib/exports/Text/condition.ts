@@ -1,4 +1,5 @@
-import { BaraReactText, TextPressEventFilter } from './event'
+import { kindOf, nameOf } from '../../functions/common'
 
-export const nameOfText = (name: string) => (triggeringEvent: BaraReactText): boolean =>
-  name ? name === triggeringEvent.name : true
+export const nameOfText = nameOf
+
+export const kindOfText = kindOf
