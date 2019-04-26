@@ -13,6 +13,12 @@ export const WelcomeText = () => {
       <Touchable name="change-welcome-message" onPress={changeMessage}>
         <Text>{message}</Text>
       </Touchable>
+      <Text name="pressable-text" hasOnPress>
+        Press me! I'm a special Text
+      </Text>
+      <Text name="not-pressable-text">
+        Do not Press me! I'm a Text without any special
+      </Text>
     </View>
   )
 }

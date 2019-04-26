@@ -38,6 +38,11 @@ export function welcomeTrigger() {
     },
   )
 
+  whenTextPress(nameOfText('pressable-text'))((data: any) => {
+    // tslint:disbale-next-line
+    console.log('pressable-text', data)
+  })
+
   useTimerElapsed(5, () => {
     setBarnState('welcome', `Who are you?`)
   })
