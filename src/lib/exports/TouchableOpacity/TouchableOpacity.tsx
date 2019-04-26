@@ -24,31 +24,56 @@ export const TouchableOpacity = React.forwardRef(
     ref: any,
   ) => {
     const context = useBaraContext()
-    const onPress: typeof _onPress = e => {
-      context.components.touchableOpacity.onPress({ name, kind, ...props })
+    
+    const onPress: typeof _onPress = event => {
+      event.persist()
+      context.components.touchableOpacity.onPress({
+        name,
+        kind,
+        event,
+        ...props,
+      })
       if (_onPress) {
-        _onPress(e)
+        _onPress(event)
       }
     }
 
-    const onPressIn: typeof _onPressIn = e => {
-      context.components.touchableOpacity.onPressIn({ name, kind, ...props })
+    const onPressIn: typeof _onPressIn = event => {
+      event.persist()
+      context.components.touchableOpacity.onPressIn({
+        name,
+        kind,
+        event,
+        ...props,
+      })
       if (_onPressIn) {
-        _onPressIn(e)
+        _onPressIn(event)
       }
     }
 
-    const onPressOut: typeof _onPressOut = e => {
-      context.components.touchableOpacity.onPressOut({ name, kind, ...props })
+    const onPressOut: typeof _onPressOut = event => {
+      event.persist()
+      context.components.touchableOpacity.onPressOut({
+        name,
+        kind,
+        event,
+        ...props,
+      })
       if (_onPressOut) {
-        _onPressOut(e)
+        _onPressOut(event)
       }
     }
 
-    const onLongPress: typeof _onLongPress = e => {
-      context.components.touchableOpacity.onLongPress({ name, kind, ...props })
+    const onLongPress: typeof _onLongPress = event => {
+      event.persist()
+      context.components.touchableOpacity.onLongPress({
+        name,
+        kind,
+        event,
+        ...props,
+      })
       if (_onLongPress) {
-        _onLongPress(e)
+        _onLongPress(event)
       }
     }
 
