@@ -2,7 +2,7 @@ import { createEventType, useEvent } from 'bara'
 
 import { BaraBaseComponentProps } from '../../models'
 
-export interface BaraReactText {
+export interface BaraReactText extends BaraBaseComponentProps {
   name?: string
   ref?: any
 }

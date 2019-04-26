@@ -16,6 +16,8 @@ export interface TextProps extends TextPropsOriginal, BaraBaseComponentProps {
 export const Text = React.forwardRef(
   (
     {
+      name,
+      kind,
       onPress: _onPress,
       onLongPress: _onLongPress,
       hasOnPress,
@@ -25,17 +27,18 @@ export const Text = React.forwardRef(
     ref: any,
   ) => {
     const context = useBaraContext()
-    const onPress: typeof _onPress = e => {
-      context.components.text.onPress({ name, ...props })
+    const onPress: typeof _onPress = event => {
+      event.persist()
+      context.components.text.onPress({ name, kind, event, ...props })
       if (_onPress) {
-        _onPress(e)
+        _onPress(event)
       }
     }
 
-    const onLongPress: typeof _onLongPress = e => {
-      context.components.text.onLongPress({ name, ...props })
+    const onLongPress: typeof _onLongPress = event => {
+      context.components.text.onLongPress({ name, kind, event, ...props })
       if (_onLongPress) {
-        _onLongPress(e)
+        _onLongPress(event)
       }
     }
 
