@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     flexDirection: 'row',
+    backgroundColor: '#963899',
   },
   button: {
     margin: 5,
@@ -34,7 +35,7 @@ const App = () => {
 
   return (
     <BaraProvider>
-      <View style={styles.view}>
+      <View name="main-container" style={styles.view}>
         <Text name="version">Version: {version}</Text>
         <View style={styles.button}>
           <Touchable name="welcome-button">

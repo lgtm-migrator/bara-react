@@ -4,9 +4,11 @@ import {
   nameOfText,
   nameOfTouchable,
   nameOfTouchableOpacity,
+  nameOfView,
   whenTextPress,
   whenTouchableOpacityPress,
   whenTouchablePress,
+  whenViewLayout,
 } from '../../lib'
 
 export function welcomeTrigger() {
@@ -19,13 +21,20 @@ export function welcomeTrigger() {
     })
   })
 
+  whenViewLayout(nameOfView('main-container'))(data => {
+    // tslint:disbale-next-line
+    console.log('Main container is updating its layout', data)
+  })
+
   whenTouchablePress(nameOfTouchable('welcome-button'))(({ name }) => {
     setBarnState('welcome', `You (${name}) are already welcomed!`)
   })
 
   whenTouchableOpacityPress(nameOfTouchableOpacity('greet-button'))(
-    ({ name }: any) => {
-      alert(`${name} is PRESSED! YAY !!!`)
+    (data: any) => {
+      alert(`${data.name} is PRESSED! YAY !!!`)
+      // tslint:disbale-next-line
+      console.log('greet-button', data)
     },
   )
 

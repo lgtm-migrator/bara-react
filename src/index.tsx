@@ -15,7 +15,7 @@ const BaraApp = () => {
     welcome: 'Welcome to Bara React App!',
   })
   useReactApp({ name: 'bara-app', App })
-  useComponentsStream({TouchableOpacity: false})
+  useComponentsStream({TouchableOpacity: true})
   welcomeTrigger()
 }
 
