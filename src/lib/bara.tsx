@@ -1,4 +1,4 @@
-import { EventType, register, useInit, useEmitter, createEmitter, createEventType, useStream } from 'bara'
+import { EventType, register, useEvent, useAction, useTrigger, useInit, useEmitter, createEmitter, createEventType, useStream } from 'bara'
 import React, { ComponentType, useEffect } from 'react'
 import { AppRegistry } from 'react-native'
 
@@ -74,5 +74,13 @@ export const useReactApp = ({
         rootTag: document.getElementById(rootHTML),
       })
     }
+  })
+}
+
+export const whenReactAppMounted = (callback: () => void) => {
+  return useTrigger(() => {
+    const event = useEvent(REACT_APP_MOUNTED)
+    const action = useAction(callback)
+    return {event, action}
   })
 }
