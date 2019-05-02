@@ -1,9 +1,10 @@
 import { Platform as _Platform } from 'react-native'
 
 import {
-  PlataformSelectSpecifics,
+  BaraReactPlatform,
+  PlatformSelectSpecifics,
   PlatformOSType,
-  PlatformSelectOptions,
+  PlatformSelectOptions
 } from './index.shared'
 
 // From: https://github.com/cheton/is-electron
@@ -55,13 +56,13 @@ function getOSName(): PlatformOSType {
 
 const realOS = getOSName()
 
-export const Platform = {
+export const Platform: BaraReactPlatform = {
   realOS,
   ..._Platform,
   isElectron: isElectron(),
   isStandalone: (window.navigator as any).standalone,
   selectUsingRealOS<T>(
-    specifics: PlataformSelectSpecifics<T>,
+    specifics: PlatformSelectSpecifics<T>,
     { fallbackToWeb = false }: PlatformSelectOptions = {},
   ) {
     const result =
