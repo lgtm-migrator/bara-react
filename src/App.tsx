@@ -1,13 +1,9 @@
 import { useBarn } from 'bara'
-import React, { Component, ReactNode, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { StyleSheet } from 'react-native'
 
-import { BaraProvider } from './lib/context'
-import { Touchable } from './lib/exports/Touchable'
-import { View } from './lib/exports/View'
-import { Text } from './lib/exports/Text'
-import { TouchableOpacity } from './lib/exports/TouchableOpacity'
+import { Touchable, View, Text, TouchableOpacity } from './lib'
 import { WelcomeText } from './examples/components/WelcomeText'
 
 const styles = StyleSheet.create({
@@ -34,24 +30,22 @@ const App = () => {
   }, [version])
 
   return (
-    <BaraProvider>
-      <View name="main-container" style={styles.view}>
-        <Text name="version">Version: {version}</Text>
-        <View style={styles.button}>
-          <Touchable name="welcome-button">
-            <Text>Welcome!</Text>
-          </Touchable>
-        </View>
-        <View style={styles.button}>
-          <TouchableOpacity name="greet-button">
-            <Text>No Greet</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <WelcomeText />
-        </View>
+    <View name="main-container" style={styles.view}>
+      <Text name="version">Version: {version}</Text>
+      <View style={styles.button}>
+        <Touchable name="welcome-button">
+          <Text>Welcome!</Text>
+        </Touchable>
       </View>
-    </BaraProvider>
+      <View style={styles.button}>
+        <TouchableOpacity name="greet-button">
+          <Text>No Greet</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <WelcomeText />
+      </View>
+    </View>
   )
 }
 
