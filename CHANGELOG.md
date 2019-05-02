@@ -1,3 +1,12 @@
+# [3.1.0](https://github.com/barajs/bara-react/compare/v3.0.0...v3.1.0) (2019-05-02)
+
+
+### Features
+
+* **bara:** add  HOC ([f923459](https://github.com/barajs/bara-react/commit/f923459))
+* **bara:** add `whenReactAppMounted` trigger ([68a1108](https://github.com/barajs/bara-react/commit/68a1108))
+* **functions:** add Platform API for OS detection ([a2e7395](https://github.com/barajs/bara-react/commit/a2e7395))
+
 # [3.0.0](https://github.com/barajs/bara-react/compare/v2.0.4...v3.0.0) (2019-04-26)
 
 

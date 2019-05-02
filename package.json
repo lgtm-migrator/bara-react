@@ -4,7 +4,7 @@
   "description": "BaraJS for React creative",
   "homepage": "https://barajs.dev",
   "repository": "https://github.com/barajs/bara-react",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
