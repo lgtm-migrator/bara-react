@@ -25,4 +25,23 @@ export const View = React.forwardRef(
   },
 )
 
+export interface ViewExProps extends ViewPropsOriginal {
+  width?: string
+  height?: string
+}
+
+export type ExChildren = ReactNode
+
+export interface ViewExMethods {
+  Component: ReactNode
+  frame: (w?: number, h?: number, alignment?: string) => ViewExMethods
+}
+
+export const ViewEx = (props: ViewExProps) => (children: ExChildren[]) => {
+  const Component = () => {
+    return <ViewOriginal {...props}>{children}</ViewOriginal>
+  }
+  return { Component }
+}
+
 export type View = ViewOriginal

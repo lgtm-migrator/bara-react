@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 import { StyleSheet } from 'react-native'
 
-import { Touchable, View, Text, TouchableOpacity } from './lib'
+import { Touchable, View, ViewEx, Text, TouchableOpacity } from './lib'
 import { WelcomeText } from './examples/components/WelcomeText'
 
 const styles = StyleSheet.create({
