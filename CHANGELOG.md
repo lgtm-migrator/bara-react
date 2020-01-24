@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/barajs/bara-react/compare/v3.1.0...v3.1.1) (2020-01-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-web to ^0.12.0 ([f9d02dc](https://github.com/barajs/bara-react/commit/f9d02dc))
+
 # [3.1.0](https://github.com/barajs/bara-react/compare/v3.0.0...v3.1.0) (2019-05-02)
 
 
